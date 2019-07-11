@@ -1,0 +1,57 @@
+* Display the signed number stored in a:5 (-2^15 to 2^15-1) *
+
+value EQU 1587		# Number to print on the display
+i = 10_000			# Greatest digit in 16-Bit
+BOOL = 1			# Condition
+NULL = 0			# Constant
+dummie = 555		# Placeholder for JMP
+
+%% INITIALIZE:
+	MOV a:5, value			# INPUT: a5
+    MOV b:13, NULL          # b13 saves 0 as const
+    MOV a:14, BOOL	        # a14 saves 1 as boolean
+    MOV b:14, i         	# b14 saves 10 000
+
+%% FUNC:
+	CMP a:5, NULL           # check a5 ? 0
+    JL %NEGATIVE:           # goto NEGATIVE
+
+%% LOOP:
+    CMP b:14, NULL          # check if already all digits were outputed
+    JLE %DONE:				# goto DONE
+
+%% ZERO_DIGIT:
+    CMP a:14, NULL          # check if boolean 'is leading' true
+    JE %PRINT:				# goto PRINT
+
+    PUSH RA(5),                     # save old a5 for check
+    DIVR RA RB(5, 14),              # a5 = a5 / i
+    JNE imm(29),                    # goto NOTZERO
+    POP RA(5),                      # return old a5 value
+    DIVR RB imm(14, 10),            # i = i / 10
+    MOV PC imm(12),                   # goto LOOP
+
+    # NOTZERO:
+    POP RA(5),                      # return old a5 value
+    MOV RA imm(14, NULL),           # set bool 'is leading' to false
+
+    # PRINT:
+    DIVR RA RB(5, 14),              # a5 = a5 / i
+    ADD RA imm(5, 0x30),            # a5 = a5 + 0x30 for ASCII-digit
+    PRINT RA(5),                    # PRINTDIGIT RA
+    MOV RA RB(5, 0),                # a5 = a5 % i
+    DIVR RB imm(14, 10),            # i = i / 10
+    MOV PC imm(12),                 # goto LOOP
+
+    # NEGATIVE:
+    CMP RA imm(5, -32768),          # compare to min value
+    JE imm(51),                     # goto MINVALUE
+    PRINTSTR str('-'),              # print '-'
+    MUL RA imm(5, -1),              # a5 = -a5
+    MOV PC imm(12),                 # goto LOOP
+
+    # MINVALUE:
+    PRINTSTR str("-32768"),         # print explicitly INT MINVALUE
+
+    # DONE:
+    PRINTSTR str('\n')

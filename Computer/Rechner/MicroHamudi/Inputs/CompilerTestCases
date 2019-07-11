@@ -1,0 +1,19 @@
+    -> # single-lined comments
+        1.  # EQU 555                                                 // at the beginning
+        2.  var EQU 555 # test                                        // at the end
+        3.  var EQ#broken                                             // splitted instruction
+        4.  kek EQU 123 # comment {is this a long comment?}           // two types of comments within a line
+        5.  #} MOV a:5                                                // close comment separator in a single comment
+
+    -> { ... } long comments:
+        -> Regular Cases:
+            1.  { hello, im comment }                                 // simple comment
+            2.  { comment stretching                                  // multiple lines
+                    within two lines }
+            3.  {comment_1} test EQU 14 {comment2}                    // instruction betweeen two comments
+            4.  testing EQU 555 {comment_1}{comment_2}                // two long comments in one line
+            5.  testing EQU 555 {comment1} # is this a comment?       // two types of comments within a line
+            6.  MOV a:5 {comment} PRINTSTR {comment_2}                // two instructions separated with two comments
+            7.  MOV a:5 {comment} PRINTSTR                            // two instructions separated with one comment
+            8.  {{{{{{{{{comment}                                     // multiple open comment separators
+            9.  {# I lied to you}                                     // single comment within a long comment

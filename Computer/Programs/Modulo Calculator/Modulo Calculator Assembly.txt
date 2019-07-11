@@ -1,0 +1,12 @@
+;	a5 = %0x0001 b = %0x0003
+
+    MOV a5, %0x0001
+    MOV b5, %0x0003
+
+func:
+    SUBR a5, b5
+    JL done
+    JMP func
+
+done:
+    ADD a5, b5

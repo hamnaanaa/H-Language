@@ -1,0 +1,13 @@
+IFETCH NOP
+INC MOV ADD PUSH AND MUL SUBR SUBL CMP OR NOT DIVR DIVL POP XCHG 
+JMP JZ JE JE JNZ JNE JOVF JLE JNG JL JNGE
+PRINT PRINTSTR NEWLINE
+EQU
+# single-line comment
+* multiple lines 
+  of comments *
+MOV a:15, b:14 
+%% label:
+JMP %label:
+.. variables:
+

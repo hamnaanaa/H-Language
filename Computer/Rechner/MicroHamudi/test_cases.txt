@@ -1,0 +1,157 @@
+## Program Structure:
+    -> BSS LIBRARIES TEXT
+
+
+##  Comments Sections:
+    -> '#' single-lined comments
+        1.  '# EQU 555'                                                 // at the beginning
+        2.  'var EQU 555 # test'                                        // at the end
+        3.  'var EQ#broken'                                             // splitted instruction
+        4.  'kek EQU 123 # comment {is this a long comment?}'           // two types of comments within a line
+        5.  '#} MOV a:5'                                                // close comment separator in a single comment
+
+    -> '{ ... }' long comments:
+        -> Regular Cases:
+            1.  '{ hello, i'm comment }'                                // simple comment
+            2.  '{ comment stretching                                   // multiple lines
+                    within two lines }'
+            3.  '{comment_1} test EQU 14 {comment2}'                    // instruction betweeen two comments
+            4.  'testing EQU 555 {comment_1}{comment_2}'                // two long comments in one line
+            5.  'testing EQU 555 {comment1} # is this a comment?'       // two types of comments within a line
+            6.  'MOV a:5 {comment} PRINTSTR {comment_2}'                // two instructions separated with two comments
+            7.  'MOV a:5 {comment} PRINTSTR'                            // two instructions separated with one comment
+            8.  '{{{{{{{{{comment}'                                     // multiple open comment separators
+            9.  '{# I lied to you'}                                     // single comment within a long comment
+
+        -> Irregular Cases:
+            1.  '{comment}}'                                            // wrong amount of close comment separators
+            2.  '{{fake second comment}}'                               // other open comment separators are just chars
+            3.  '} MOV a:5'                                             // closing non-existing long comment
+            4.  '} keki EQU 5551    # comment'                          // closing non-existing long and single comments
+
+
+##  Variables Assignment:
+    -> Regular Cases:
+        1.  'var EQU 555'                                               // 'EQU' written big
+        2.  'var eQu 555'                                               // 'eQu' written camecase
+        3.  'var equ 555'                                               // 'equ' written small
+        4.  'var EQU 0x15'                                              // hex_number
+        5.  'var EQU 0b11011'                                           // bin_number
+        6.  'var EQU 0o15'                                              // oct_number
+        7.  'var_var EQU 555'                                           // underline in name
+        8.  'mov_var EQU 123'                                           // reserved word as a part of the name
+        9.  'var equ (15+0x13)'                                         // complex value
+        10. 'var  EQU  15'                                              // more whitespace
+        11. 'var equ ( 15 + 0x13 )'                                     // extra whitespace within parenthesis
+
+    -> Irregular Cases:
+        1.  'mov EQU, 555'                                              // reserved word
+        2.  'var: EQU 555'                                              // forbidden char
+        3.  '. EQU 555'                                                 // forbidden char
+        4.  '% EQU 555'                                                 // forbidden char
+        5.  'name two EQU 555'                                          // name with space
+        6.  'EQU EQU 555'                                               // reserved EQU word
+        7.  '.. EQU 555'                                                // section declaration as a name
+        8.  '# EQU 555'                                                 // leading comment
+        9.  'var EQU 555 test EQU 512'                                  // multiple Assignments within one line
+        10. ' EQU 123'                                                  // space as a variable name
+        11. 'var $equ 123'                                              // 'equ' with other chars
+        12. '$$ equ 123'                                                // import-section token
+        13. 'var equ abcd'                                              // unexpected value given
+        14. 'test_label equ 15                                          // multiple definition
+             test_label equ 25'
+        15. 'var equ 15.3'                                              // float result WIP
+        16. 'var EQU 15,3'                                              // non-valid floating POINT number
+        17. '15 EQU 16'                                                 // number as a variable
+        18. 'var EQUQ 15'                                               // typo reserved word EQU
+
+##  Assembly Instructions:
+    $ Labels
+        -> Regular Cases:
+            1.  '%% initialize:'                                        // normal label
+            2.  '%% under_score:'                                       // underscore in labels
+
+        -> Irregular Cases:
+            1.  '%% la bel:'                                            // space in label name
+            2.  '%% label'                                              // no colon at the end of the label
+            3.  '%% :'                                                  // empty label
+            4.  '%% mov:'                                               // reserved word
+
+    $ Instructions
+        -> Allowed Operands:
+            - RegistryAccess:       a:x                 // x -> [0..15]
+            - String:               "Hello, World"      // '"'- or "'"- separated
+            - Labels:               %jump_label:        // only for Jcc-instructions
+            - Expressions:          (15+3*8)            // make sure there is no space in between
+            - Variables:            null                // null EQU 0
+            - ArrayAccess:          >data<:[2]          // >data<: def: [15, 12, 11]
+
+
+        -> Regular Cases:
+            1.  MOV a:5, b:13                                               // two registry access
+            2.  ADD a:13, 15                                                // registry access + constant (expression)
+            3.  PRINTSTR "-327'68"                                          // " as separator and ' in string
+            4.  PRINTSTR '-3676"8'                                          // ' as separator and " in string
+            5.  PRINTSTR "-327\"68"                                         // correct escape sequence used (1)
+            6.  PRINTSTR '-327\'68'                                         // correct escape sequence used (2)
+            7.  PRINTSTR "%%string:"                                        // label as string
+            8.  PRINTSTR "Hello, World!"                                    // whitespace in a string
+
+
+        -> Irregular Cases:
+            1.  MOV a:5 b:13                                                // no comma between two operands
+            2.  MOV a:5:3, b:15                                             // non-valid registy access
+            3.  MOV c:13, a:13                                              // non-valid registry name (1. registry)
+            4.  MOV a:13, d:12                                              // non-valid registry namr (2. registry)
+            6.  PRINTSTR "-327"68"                                          // no escape sequence found (1)
+            7.  PRINTSTR '-327'68'                                          // no escape sequence found (2)
+            8.  PRINTSTR ''-32768'                                          // no escape sequence at the beginning found
+            9.  PRINTSTR ""-32768"                                          // no escape sequence at the beginning found
+            10. PRINTSTR "startend'                                         // different string separators
+            11. MOV a:5, %%label                                            // label declaration as an operand
+            12. MOV a:5, %label:                                            // label as an operand
+            13. MOV a:5, ::strtol                                           // library as an operand
+            14. MOV a:5, def:5                                              // def: as an operand
+            15. MOV a:5, res:                                               // res: as an operand
+            16. PRINTSTR "hello, world\"                                    // string separator with escape sequence
+            17. MOV a:23, 15                                                // non-available registry index
+
+# BSS-Section:
+    -> Regular Cases:
+        1.  >placeholder<: RES: 12                                          // normal pointer
+        2.  >move<: res: (25+15)                                            // expression as value
+        3,  >overhead<: res: 1_2                                            // underline separator for numbers
+        4.  >overhead<: res: (1_+_2)                                        // underline separator as whitespace
+
+    -> Irregular Cases:
+        1.  >poin<<ter<: RES: 21                                            // wrong label name
+        2.  pointer<: RES: 21                                               // wrong separator left
+        3.  >pointer< RES: 21                                               // wrong separator right (1)
+        4.  >pointer: RES: 21                                               // wrong separator right (2)
+        5.  >poin ter<: RES: 21                                             // whitespace in label
+        6.  >mov<: RES: 21                                                  // reserved word as label
+        7.  >move<: resq: 21                                                // wrong reservation word
+        8.  >mov<: res: "13"                                                // wrong value (not int)
+        9.  >mov<: res: 2.5                                                 // wrong value (float)
+
+
+# DATA-Section:
+    -> Regular Cases:
+        1.  >array<: def: [15, 14, 13, 12, 11]                              // array initialization
+        2.  >complex_array<: def: [(15 + 0x13), "Hello World!", [15, 13, 12, 11], 12]   // complex array
+        3.  >string<: def: "Hello, \" World!"                               // string with escape sequence
+        4.  >stringer<: def: "Hello World"                                  // string (with space)
+        5.  >number<: def: 15                                               // single number initialization
+
+    -> Irregular Cases:
+        1.  >bad<: def: [15, 13                                             // array's close bracket missing
+        2.  >bad<: def. 15, 13]                                             // array's open bracket missing
+        3.  >bad<: def: "String with no end                                 // string was not closed
+        4.  >bad<: def: "String with no end'                                // different string separators
+        5.  >bad<: def: String with no end"                                 // string was not opened
+        6.  >bad<: def: [15, [12, 13]                                       // array's close bracket missing
+        7.  >bad<: def: [15, ]                                              // empty expression
+        8.  >bad<: def:                                                     // no value
+        9.  >number<: def: 1.5                                              // float number (WIP)
+        10. >bad<: def: (12))                                               // too many close parenthesis
+        11. >bad<: def: ((12)                                               // too many open parenthesis

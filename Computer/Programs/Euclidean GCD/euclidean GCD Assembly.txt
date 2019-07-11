@@ -1,0 +1,19 @@
+a5 = %0x0001 b = %0x0003
+
+    MOV a5, %0x0001
+    MOV b5, %0x0003
+
+label:
+    MOV b15, 0
+    CMP a5, b15
+    JZ return
+    PUSH a5
+    DIVL a5, b5
+    MOV a5, b0
+    POP b5
+    JMP label
+
+// for numerical display output
+return:
+    ADD b5, 0 
+    JMP return

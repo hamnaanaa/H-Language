@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b5eb597b-70ca-4860-a9c9-e7982b4c1e85" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Rechner$Opcodes.coverage" NAME="Opcodes Coverage Results" MODIFIED="1556488251090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Enums" />
+    <SUITE FILE_PATH="coverage/Rechner$INC_RA.coverage" NAME="INC_RA Coverage Results" MODIFIED="1556490011250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/OPs" />
+    <SUITE FILE_PATH="coverage/Rechner$MPS_parser__1_.coverage" NAME="MPS_parser (1) Coverage Results" MODIFIED="1560113096396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Parser" />
+    <SUITE FILE_PATH="coverage/Rechner$display_printer.coverage" NAME="display_printer Coverage Results" MODIFIED="1556272842872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rechner$single_instr.coverage" NAME="single_instr Coverage Results" MODIFIED="1557147313091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Programs" />
+    <SUITE FILE_PATH="coverage/Rechner$MOV_PC_imm.coverage" NAME="MOV_PC_imm Coverage Results" MODIFIED="1556570010983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/OPs" />
+    <SUITE FILE_PATH="coverage/Rechner$math.coverage" NAME="math Coverage Results" MODIFIED="1557154787425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rechner$Operands.coverage" NAME="Operands Coverage Results" MODIFIED="1558386483212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Enums" />
+    <SUITE FILE_PATH="coverage/Rechner$all_instructions.coverage" NAME="all_instructions Coverage Results" MODIFIED="1557069025429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Programs" />
+    <SUITE FILE_PATH="coverage/Rechner$ProgramExecutor.coverage" NAME="ProgramExecutor Coverage Results" MODIFIED="1557899328343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi" />
+    <SUITE FILE_PATH="coverage/Rechner$Formatter.coverage" NAME="Formatter Coverage Results" MODIFIED="1556793544288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Visitors" />
+    <SUITE FILE_PATH="coverage/Rechner$CompilerFunctions.coverage" NAME="CompilerFunctions Coverage Results" MODIFIED="1558267060518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Compiler" />
+    <SUITE FILE_PATH="coverage/Rechner$Compiler__1_.coverage" NAME="Compiler (1) Coverage Results" MODIFIED="1558689143426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Compiler" />
+    <SUITE FILE_PATH="coverage/Rechner$Interpreter.coverage" NAME="Interpreter Coverage Results" MODIFIED="1557830354062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi" />
+    <SUITE FILE_PATH="coverage/Rechner$Functions.coverage" NAME="Functions Coverage Results" MODIFIED="1556867491827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Functions" />
+    <SUITE FILE_PATH="coverage/Rechner$MPS_parser.coverage" NAME="MPS_parser Coverage Results" MODIFIED="1557321988528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rechner$Compiler.coverage" NAME="Compiler Coverage Results" MODIFIED="1557662145944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi" />
+    <SUITE FILE_PATH="coverage/Rechner$Preprocessor.coverage" NAME="Preprocessor Coverage Results" MODIFIED="1558504294131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Compiler" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MicroHamudi/test_cases.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1290">
+              <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MicroHamudi/Compiler/Compiler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MicroHamudi/Compiler/Preprocessor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2175">
+              <caret line="147" column="47" selection-start-line="147" selection-start-column="47" selection-end-line="147" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MicroHamudi/Functions/CompilerFunctions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="261" lean-forward="true" selection-start-line="261" selection-end-line="261" />
+              <folding>
+                <element signature="e#164#328#0" />
+                <element signature="e#955#1169#0" />
+                <element signature="e#955#1139#1" />
+                <element signature="e#1212#1446#0" />
+                <element signature="e#1212#1410#1" />
+                <element signature="e#1483#1697#0" />
+                <element signature="e#1483#1667#1" />
+                <element signature="e#1747#3816#0" />
+                <element signature="e#1747#2018#1" />
+                <element signature="e#2169#3782#0" />
+                <element signature="e#2169#2193#0" />
+                <element signature="e#2444#3782#0" />
+                <element signature="e#2545#2684#0" />
+                <element signature="e#2809#3366#0" />
+                <element signature="e#3056#3366#0" />
+                <element signature="e#3111#3281#0" />
+                <element signature="e#3428#3590#0" />
+                <element signature="e#3625#3782#0" />
+                <element signature="e#3886#8480#0" />
+                <element signature="e#3886#4386#1" />
+                <element signature="e#4652#7040#0" />
+                <element signature="e#4819#7040#0" />
+                <element signature="e#5051#5596#0" />
+                <element signature="e#5438#5596#0" />
+                <element signature="e#5795#5887#0" />
+                <element signature="e#6028#6200#0" />
+                <element signature="e#6111#6200#0" />
+                <element signature="e#6447#6943#0" />
+                <element signature="e#6687#6853#0" />
+                <element signature="e#7060#8480#0" />
+                <element signature="e#7234#7554#0" />
+                <element signature="e#7465#7554#0" />
+                <element signature="e#7730#7832#0" />
+                <element signature="e#7966#8438#0" />
+                <element signature="e#8194#8356#0" />
+                <element signature="e#8542#9225#0" />
+                <element signature="e#8542#8801#1" />
+                <element signature="e#8909#9225#0" />
+                <element signature="e#9067#9225#0" />
+                <element signature="e#9256#9660#0" />
+                <element signature="e#9256#9448#1" />
+                <element signature="e#9529#9640#0" />
+                <element signature="e#9711#10113#0" />
+                <element signature="e#9711#9931#1" />
+                <element signature="e#10188#11119#0" />
+                <element signature="e#10188#10670#1" />
+                <element signature="e#10715#10887#0" />
+                <element signature="e#10936#11119#0" />
+                <element signature="e#11200#11635#1" />
+                <element signature="e#11927#12113#0" />
+                <element signature="e#12140#12269#0" />
+                <element signature="e#12388#12719#0" />
+                <element signature="e#12409#12590#0" />
+                <element signature="e#12822#13236#0" />
+                <element signature="e#12864#13236#0" />
+                <element signature="e#12889#13075#0" />
+                <element signature="e#13110#13236#0" />
+                <element signature="e#13300#13824#1" />
+                <element signature="e#13950#14396#0" />
+                <element signature="e#13971#14182#0" />
+                <element signature="e#14209#14396#0" />
+                <element signature="e#14516#14701#0" />
+                <element signature="e#14826#15195#0" />
+                <element signature="e#14867#15195#0" />
+                <element signature="e#15009#15195#0" />
+                <element signature="e#15360#20343#0" />
+                <element signature="e#15360#16329#1" />
+                <element signature="e#16356#16521#0" />
+                <element signature="e#16615#17370#0" />
+                <element signature="e#16661#17163#0" />
+                <element signature="e#16703#16953#0" />
+                <element signature="e#16703#16753#0" />
+                <element signature="e#16988#17163#0" />
+                <element signature="e#17190#17370#0" />
+                <element signature="e#17449#18096#0" />
+                <element signature="e#17507#17891#0" />
+                <element signature="e#17630#17826#0" />
+                <element signature="e#17919#18096#0" />
+                <element signature="e#18116#20343#0" />
+                <element signature="e#18133#19730#0" />
+                <element signature="e#18319#19628#0" />
+                <element signature="e#18368#19041#0" />
+                <element signature="e#18401#18785#0" />
+                <element signature="e#18836#19041#0" />
+                <element signature="e#18879#19040#0" />
+                <element signature="e#19084#19628#0" />
+                <element signature="e#19117#19392#0" />
+                <element signature="e#19154#19281#0" />
+                <element signature="e#19443#19628#0" />
+                <element signature="e#19480#19607#0" />
+                <element signature="e#19784#20343#0" />
+                <element signature="e#19809#20073#0" />
+                <element signature="e#19860#20023#0" />
+                <element signature="e#20108#20343#0" />
+                <element signature="e#20159#20322#0" />
+                <element signature="e#20382#21016#0" />
+                <element signature="e#20382#20705#1" />
+                <element signature="e#21056#21531#0" />
+                <element signature="e#21056#21267#1" />
+                <element signature="e#21374#21487#0" />
+                <element signature="e#21414#21487#0" />
+                <element signature="e#21571#21953#0" />
+                <element signature="e#21571#21743#1" />
+                <element signature="e#22017#22249#1" />
+                <element signature="e#22529#22614#0" />
+                <element signature="e#23013#23205#0" />
+                <element signature="e#23141#23205#0" />
+                <element signature="e#23277#23438#0" />
+                <element signature="e#23486#23665#0" />
+                <element signature="e#23764#23920#0" />
+                <element signature="e#23960#24172#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/math.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MicroHamudi/Enums/Maps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>register</find>
+      <find>&quot;</find>
+      <find>get_av</find>
+      <find>get_</find>
+      <find>get_all</find>
+      <find>get_availab</find>
+      <find>get_avai</find>
+      <find>available</find>
+      <find>__init</find>
+      <find>operand</find>
+      <find>jumps</find>
+      <find>self.jumps</find>
+      <find>add_to</find>
+      <find>is_valid_value</find>
+      <find>&quot;'&quot;</find>
+      <find>line.split(' ')</find>
+      <find>line.spl</find>
+      <find>line.split</find>
+      <find>count_tok</find>
+      <find>'</find>
+      <find>is_allowed_value</find>
+      <find>LEFTBRACKET</find>
+      <find>RIGHTBRACKET</find>
+      <find>=</find>
+      <find />
+      <find>:</find>
+      <find>JL</find>
+      <find>add_to_</find>
+      <find>is_allowed</find>
+      <find>-2, 2</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/PRINTSTR_str.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JNZ_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JE_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JNE_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JOVF_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JLE_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JNG_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JL_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JNGE_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/CMP_RA_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/CMP_RB_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/MUL_RA_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/MUL_RB_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/XCHG_RA_RB.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/DIVR_RA_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/DIVR_RB_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Compiler.py" />
+        <option value="$PROJECT_DIR$/MPS.txt" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Interpreter.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongRegistryIndexException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongVariableAssignmentException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongImmediateException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/CMP_RA_RB.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Functions/Functions.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongInstructionException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Programs/all_instructions.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/OPs/JMP_imm.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Programs/single_instr.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/ProgramExecutor.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/UndefinedSectionException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongSectionException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongSyntaxException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongLabelException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/NonImplementedFunctionalityException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongCommentSectionException.py" />
+        <option value="$PROJECT_DIR$/Parser/MPS_parser.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongOperandException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongRegistryAccessException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongStringException.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/WrongStringFormatException.py" />
+        <option value="$PROJECT_DIR$/Parser/MPS.txt" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Exceptions/CompilerExceptions.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Compiler/Compiler.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/test_cases.txt" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Enums/Opcodes.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Compiler/CompilerFunctions.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Enums/Operands.py" />
+        <option value="$PROJECT_DIR$/../../../Python/CommonRoad/Tutorials/initialize_test.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Compiler/Preprocessor.py" />
+        <option value="$PROJECT_DIR$/MicroHamudi/Functions/CompilerFunctions.py" />
+        <option value="$PROJECT_DIR$/math.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="28" />
+    <option name="width" value="960" />
+    <option name="height" value="1052" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+              <item name="Compiler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+              <item name="Enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+              <item name="Inputs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+              <item name="Outputs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="MicroHamudi" type="462c0819:PsiDirectoryNode" />
+              <item name="Programs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rechner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rechner" type="462c0819:PsiDirectoryNode" />
+              <item name="Parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Python/CommonRoad/Tutorials/initialize_test.py" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MicroHamudi/Functions" />
+      <recent name="E:\Informatik Python\New\Rechner\Parser\" />
+      <recent name="E:\Informatik Python\New\Rechner\MicroHamudi\OPs" />
+      <recent name="E:\Informatik Python\New\Rechner\MicroHamudi\Visitors" />
+      <recent name="E:\Informatik Python\New\Rechner\Mini" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.math">
+    <configuration name="Compiler (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Rechner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MicroHamudi/Compiler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MicroHamudi/Compiler/Compiler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CompilerFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Rechner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MicroHamudi/Compiler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MicroHamudi/Functions/CompilerFunctions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Opcodes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Rechner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MicroHamudi/Enums" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MicroHamudi/Enums/Maps.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="initialize_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Rechner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../Python/CommonRoad/Tutorials" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../Python/CommonRoad/Tutorials/initialize_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="math" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Rechner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/math.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.math" />
+        <item itemvalue="Python.initialize_test" />
+        <item itemvalue="Python.Compiler (1)" />
+        <item itemvalue="Python.Opcodes" />
+        <item itemvalue="Python.CompilerFunctions" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5eb597b-70ca-4860-a9c9-e7982b4c1e85" name="Default Changelist" comment="" />
+      <created>1554504911475</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554504911475</updated>
+      <workItem from="1554504940202" duration="4150000" />
+      <workItem from="1554509118791" duration="180000" />
+      <workItem from="1554543532097" duration="14000" />
+      <workItem from="1554591241555" duration="3099000" />
+      <workItem from="1554653781043" duration="12000" />
+      <workItem from="1554678216647" duration="3759000" />
+      <workItem from="1554751276788" duration="101000" />
+      <workItem from="1554806628256" duration="3296000" />
+      <workItem from="1554905173803" duration="2172000" />
+      <workItem from="1555239668515" duration="56000" />
+      <workItem from="1555282040418" duration="879000" />
+      <workItem from="1555329330870" duration="836000" />
+      <workItem from="1555441095817" duration="893000" />
+      <workItem from="1555447726201" duration="4926000" />
+      <workItem from="1555459840293" duration="141000" />
+      <workItem from="1555620174793" duration="2233000" />
+      <workItem from="1555623273668" duration="623000" />
+      <workItem from="1555949913504" duration="1733000" />
+      <workItem from="1556011125181" duration="1145000" />
+      <workItem from="1556272652779" duration="784000" />
+      <workItem from="1556305280550" duration="2029000" />
+      <workItem from="1556452878010" duration="1202000" />
+      <workItem from="1556481102013" duration="6312000" />
+      <workItem from="1556522942140" duration="1488000" />
+      <workItem from="1556530043048" duration="7294000" />
+      <workItem from="1556620653843" duration="10215000" />
+      <workItem from="1556721436529" duration="5863000" />
+      <workItem from="1556742618003" duration="1271000" />
+      <workItem from="1556773037414" duration="2066000" />
+      <workItem from="1556792584212" duration="2384000" />
+      <workItem from="1556866822663" duration="4860000" />
+      <workItem from="1556875665006" duration="6346000" />
+      <workItem from="1556900084875" duration="1989000" />
+      <workItem from="1557059414378" duration="779000" />
+      <workItem from="1557061263848" duration="842000" />
+      <workItem from="1557067984551" duration="4177000" />
+      <workItem from="1557077900015" duration="2816000" />
+      <workItem from="1557081265874" duration="1230000" />
+      <workItem from="1557084108421" duration="2794000" />
+      <workItem from="1557125865046" duration="1611000" />
+      <workItem from="1557129477621" duration="228000" />
+      <workItem from="1557134787981" duration="5006000" />
+      <workItem from="1557146867181" duration="3990000" />
+      <workItem from="1557173298829" duration="1765000" />
+      <workItem from="1557210330606" duration="162000" />
+      <workItem from="1557319184166" duration="1295000" />
+      <workItem from="1557321149007" duration="1427000" />
+      <workItem from="1557387493288" duration="552000" />
+      <workItem from="1557392765063" duration="600000" />
+      <workItem from="1557662115528" duration="2817000" />
+      <workItem from="1557829767843" duration="14514000" />
+      <workItem from="1557898615611" duration="8813000" />
+      <workItem from="1557920000744" duration="58000" />
+      <workItem from="1557923263319" duration="16027000" />
+      <workItem from="1558021025119" duration="9179000" />
+      <workItem from="1558262218476" duration="15688000" />
+      <workItem from="1558337453186" duration="3053000" />
+      <workItem from="1558344752858" duration="11086000" />
+      <workItem from="1558472907058" duration="1691000" />
+      <workItem from="1558502899935" duration="2635000" />
+      <workItem from="1558588381461" duration="12499000" />
+      <workItem from="1558725587532" duration="1434000" />
+      <workItem from="1559677560808" duration="38000" />
+      <workItem from="1560104224743" duration="2490000" />
+      <workItem from="1560969705577" duration="9705000" />
+      <workItem from="1561038232069" duration="12245000" />
+      <workItem from="1561231131336" duration="11973000" />
+      <workItem from="1561331504546" duration="1871000" />
+      <workItem from="1561447483890" duration="2374000" />
+      <workItem from="1561577295205" duration="1790000" />
+      <workItem from="1561580448757" duration="5553000" />
+      <workItem from="1562067328265" duration="817000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="261975000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20917822" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32831" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32831" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935413" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Rechner$initialize_test.coverage" NAME="initialize_test Coverage Results" MODIFIED="1561453085235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Python/CommonRoad/Tutorials" />
+    <SUITE FILE_PATH="coverage/Rechner$Compiler__1_.coverage" NAME="Compiler (1) Coverage Results" MODIFIED="1561240916540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Compiler" />
+    <SUITE FILE_PATH="coverage/Rechner$Opcodes.coverage" NAME="Opcodes Coverage Results" MODIFIED="1561231920299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Enums" />
+    <SUITE FILE_PATH="coverage/Rechner$CompilerFunctions.coverage" NAME="CompilerFunctions Coverage Results" MODIFIED="1561029173367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MicroHamudi/Compiler" />
+    <SUITE FILE_PATH="coverage/Rechner$math.coverage" NAME="math Coverage Results" MODIFIED="1562068055093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/ADD_RA_RB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/XCHG_RA_RB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/ADD_ESP_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/ADD_RA_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/ADD_RB_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="22" lean-forward="true" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/DIVR_RB_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/MOV_RA_EBP_p_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Outputs/program">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/codecs.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/_bootlocale.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongVariableAssignmentException.py" />
+    <entry file="file://$PROJECT_DIR$/Parser/display_printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Visitors/Interpreter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Visitors/Formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Visitors/AsmVisitor.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/CMP_RA_RB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/DIVR_RA_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/INC_RA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/JLE_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Functions/Functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-729">
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongInstructionException.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/types.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Programs/single_instr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="105" column="11" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/OPs/JMP_imm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/ProgramExecutor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/enum.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongImmediateException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongSectionException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongSyntaxException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/NonImplementedFunctionalityException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/UndefinedSectionException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongCommentSectionException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongRegistryIndexException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongOperandException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongRegistryAccessException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Programs/all_instructions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="67" column="11" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongLabelException.py" />
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/WrongStringFormatException.py" />
+    <entry file="file://$PROJECT_DIR$/Parser/MPS_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#300#789#0" />
+            <element signature="e#440#643#0" />
+            <element signature="e#703#789#0" />
+            <element signature="e#740#789#0" />
+            <element signature="e#826#1297#0" />
+            <element signature="e#1001#1269#0" />
+            <element signature="e#1048#1210#0" />
+            <element signature="e#1343#1600#0" />
+            <element signature="e#1673#2237#0" />
+            <element signature="e#1814#2237#0" />
+            <element signature="e#1848#2150#0" />
+            <element signature="e#2273#2674#0" />
+            <element signature="e#2398#2674#0" />
+            <element signature="e#2467#2674#0" />
+            <element signature="e#2547#2674#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser/MPS.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3510">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Inputs/CompilerTestCases">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Inputs/NumberPrinterAssembly.hlan">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="11" lean-forward="true" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Exceptions/CompilerExceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Python/CommonRoad/Tutorials/initialize_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Enums/Operands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/test_cases.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Compiler/Compiler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Compiler/Preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="147" column="47" selection-start-line="147" selection-start-column="47" selection-end-line="147" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Enums/Maps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MicroHamudi/Functions/CompilerFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="261" lean-forward="true" selection-start-line="261" selection-end-line="261" />
+          <folding>
+            <element signature="e#164#328#0" />
+            <element signature="e#955#1169#0" />
+            <element signature="e#955#1139#1" />
+            <element signature="e#1212#1446#0" />
+            <element signature="e#1212#1410#1" />
+            <element signature="e#1483#1697#0" />
+            <element signature="e#1483#1667#1" />
+            <element signature="e#1747#3816#0" />
+            <element signature="e#1747#2018#1" />
+            <element signature="e#2169#3782#0" />
+            <element signature="e#2169#2193#0" />
+            <element signature="e#2444#3782#0" />
+            <element signature="e#2545#2684#0" />
+            <element signature="e#2809#3366#0" />
+            <element signature="e#3056#3366#0" />
+            <element signature="e#3111#3281#0" />
+            <element signature="e#3428#3590#0" />
+            <element signature="e#3625#3782#0" />
+            <element signature="e#3886#8480#0" />
+            <element signature="e#3886#4386#1" />
+            <element signature="e#4652#7040#0" />
+            <element signature="e#4819#7040#0" />
+            <element signature="e#5051#5596#0" />
+            <element signature="e#5438#5596#0" />
+            <element signature="e#5795#5887#0" />
+            <element signature="e#6028#6200#0" />
+            <element signature="e#6111#6200#0" />
+            <element signature="e#6447#6943#0" />
+            <element signature="e#6687#6853#0" />
+            <element signature="e#7060#8480#0" />
+            <element signature="e#7234#7554#0" />
+            <element signature="e#7465#7554#0" />
+            <element signature="e#7730#7832#0" />
+            <element signature="e#7966#8438#0" />
+            <element signature="e#8194#8356#0" />
+            <element signature="e#8542#9225#0" />
+            <element signature="e#8542#8801#1" />
+            <element signature="e#8909#9225#0" />
+            <element signature="e#9067#9225#0" />
+            <element signature="e#9256#9660#0" />
+            <element signature="e#9256#9448#1" />
+            <element signature="e#9529#9640#0" />
+            <element signature="e#9711#10113#0" />
+            <element signature="e#9711#9931#1" />
+            <element signature="e#10188#11119#0" />
+            <element signature="e#10188#10670#1" />
+            <element signature="e#10715#10887#0" />
+            <element signature="e#10936#11119#0" />
+            <element signature="e#11200#11635#1" />
+            <element signature="e#11927#12113#0" />
+            <element signature="e#12140#12269#0" />
+            <element signature="e#12388#12719#0" />
+            <element signature="e#12409#12590#0" />
+            <element signature="e#12822#13236#0" />
+            <element signature="e#12864#13236#0" />
+            <element signature="e#12889#13075#0" />
+            <element signature="e#13110#13236#0" />
+            <element signature="e#13300#13824#1" />
+            <element signature="e#13950#14396#0" />
+            <element signature="e#13971#14182#0" />
+            <element signature="e#14209#14396#0" />
+            <element signature="e#14516#14701#0" />
+            <element signature="e#14826#15195#0" />
+            <element signature="e#14867#15195#0" />
+            <element signature="e#15009#15195#0" />
+            <element signature="e#15360#20343#0" />
+            <element signature="e#15360#16329#1" />
+            <element signature="e#16356#16521#0" />
+            <element signature="e#16615#17370#0" />
+            <element signature="e#16661#17163#0" />
+            <element signature="e#16703#16953#0" />
+            <element signature="e#16703#16753#0" />
+            <element signature="e#16988#17163#0" />
+            <element signature="e#17190#17370#0" />
+            <element signature="e#17449#18096#0" />
+            <element signature="e#17507#17891#0" />
+            <element signature="e#17630#17826#0" />
+            <element signature="e#17919#18096#0" />
+            <element signature="e#18116#20343#0" />
+            <element signature="e#18133#19730#0" />
+            <element signature="e#18319#19628#0" />
+            <element signature="e#18368#19041#0" />
+            <element signature="e#18401#18785#0" />
+            <element signature="e#18836#19041#0" />
+            <element signature="e#18879#19040#0" />
+            <element signature="e#19084#19628#0" />
+            <element signature="e#19117#19392#0" />
+            <element signature="e#19154#19281#0" />
+            <element signature="e#19443#19628#0" />
+            <element signature="e#19480#19607#0" />
+            <element signature="e#19784#20343#0" />
+            <element signature="e#19809#20073#0" />
+            <element signature="e#19860#20023#0" />
+            <element signature="e#20108#20343#0" />
+            <element signature="e#20159#20322#0" />
+            <element signature="e#20382#21016#0" />
+            <element signature="e#20382#20705#1" />
+            <element signature="e#21056#21531#0" />
+            <element signature="e#21056#21267#1" />
+            <element signature="e#21374#21487#0" />
+            <element signature="e#21414#21487#0" />
+            <element signature="e#21571#21953#0" />
+            <element signature="e#21571#21743#1" />
+            <element signature="e#22017#22249#1" />
+            <element signature="e#22529#22614#0" />
+            <element signature="e#23013#23205#0" />
+            <element signature="e#23141#23205#0" />
+            <element signature="e#23277#23438#0" />
+            <element signature="e#23486#23665#0" />
+            <element signature="e#23764#23920#0" />
+            <element signature="e#23960#24172#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
