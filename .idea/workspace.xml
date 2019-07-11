@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="16348fd1-1576-41df-aeec-912db4a24f85" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTestingCases/TokensTester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1717">
+              <caret line="940" column="4" selection-start-line="940" selection-start-column="4" selection-end-line="940" selection-end-column="4" />
+              <folding>
+                <element signature="docComment;class#TokensTester#0" />
+                <element signature="method#separate#0;class#TokensTester#0" />
+                <element signature="docComment;method#registryAccessTokenTest_1_1#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_1_1#0;class#TokensTester#0" />
+                <element signature="e#1338#1820#1" />
+                <element signature="e#1464#1810#1" />
+                <element signature="docComment;method#registryAccessTokenTest_1_2#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_1_2#0;class#TokensTester#0" />
+                <element signature="e#3072#3419#1" />
+                <element signature="docComment;method#registryAccessTokenTest_1_3#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_1_3#0;class#TokensTester#0" />
+                <element signature="e#4448#4799#1" />
+                <element signature="docComment;method#registryAccessTokenTest_2_1#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_2_1#0;class#TokensTester#0" />
+                <element signature="e#6066#6339#1" />
+                <element signature="e#6084#6182#0" />
+                <element signature="e#6225#6329#0" />
+                <element signature="docComment;method#registryAccessTokenTest_2_2#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_2_2#0;class#TokensTester#0" />
+                <element signature="e#7252#7525#1" />
+                <element signature="e#7270#7368#0" />
+                <element signature="e#7411#7515#0" />
+                <element signature="docComment;method#registryAccessTokenTest_2_3#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_2_3#0;class#TokensTester#0" />
+                <element signature="e#8598#8868#1" />
+                <element signature="e#8616#8711#0" />
+                <element signature="e#8754#8858#0" />
+                <element signature="docComment;method#registryAccessTokenTest_2_4#0;class#TokensTester#0" />
+                <element signature="method#registryAccessTokenTest_2_4#0;class#TokensTester#0" />
+                <element signature="e#10049#10304#1" />
+                <element signature="e#10067#10147#0" />
+                <element signature="e#10190#10294#0" />
+                <element signature="docComment;method#operatorTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#operatorTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#11235#11590#1" />
+                <element signature="docComment;method#operatorTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#operatorTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#12606#12837#1" />
+                <element signature="e#12624#12686#0" />
+                <element signature="e#12723#12827#0" />
+                <element signature="docComment;method#nameLiteralTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#nameLiteralTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#14044#14428#1" />
+                <element signature="docComment;method#nameLiteralTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#nameLiteralTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#15435#15681#1" />
+                <element signature="e#15453#15527#0" />
+                <element signature="e#15567#15671#0" />
+                <element signature="docComment;method#accessLabelTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#accessLabelTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#16729#17113#1" />
+                <element signature="docComment;method#accessLabelTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#accessLabelTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#18343#18589#1" />
+                <element signature="e#18361#18435#0" />
+                <element signature="e#18475#18579#0" />
+                <element signature="docComment;method#integerExpressionTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#integerExpressionTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#19617#20036#1" />
+                <element signature="docComment;method#integerExpressionTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#integerExpressionTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#21260#21517#1" />
+                <element signature="e#21278#21364#0" />
+                <element signature="e#21403#21507#0" />
+                <element signature="docComment;method#jumpLabelTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#jumpLabelTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#22360#22683#1" />
+                <element signature="docComment;method#jumpLabelTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#jumpLabelTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#23885#24125#1" />
+                <element signature="e#23903#23973#0" />
+                <element signature="e#24011#24115#0" />
+                <element signature="docComment;method#accessLabelWithIndexTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#accessLabelWithIndexTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#25065#25486#1" />
+                <element signature="docComment;method#accessLabelWithIndexTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#accessLabelWithIndexTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#26985#27249#1" />
+                <element signature="e#27003#27095#0" />
+                <element signature="e#27135#27239#0" />
+                <element signature="docComment;method#entryLabelTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#entryLabelTokenTest_1#0;class#TokensTester#0" />
+                <element signature="e#28047#28377#1" />
+                <element signature="docComment;method#entryLabelTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#entryLabelTokenTest_2#0;class#TokensTester#0" />
+                <element signature="e#29543#29786#1" />
+                <element signature="e#29561#29633#0" />
+                <element signature="e#29672#29776#0" />
+                <element signature="docComment;method#stringLiteralTokenTest_1#0;class#TokensTester#0" />
+                <element signature="method#stringLiteralTokenTest_1#0;class#TokensTester#0" />
+                <element signature="docComment;method#stringLiteralTokenTest_2#0;class#TokensTester#0" />
+                <element signature="method#stringLiteralTokenTest_2#0;class#TokensTester#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyConstants/Opcodes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyFunctionality/AssemblyFunctions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="533">
+              <caret line="251" column="79" selection-start-line="251" selection-start-column="79" selection-end-line="251" selection-end-column="79" />
+              <folding>
+                <element signature="docComment;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#isRegistryName#0;class#AssemblyFunctions#0" />
+                <element signature="method#isRegistryName#0;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#isRegistryIndex#0;class#AssemblyFunctions#0" />
+                <element signature="method#isRegistryIndex#0;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#eval#0;class#AssemblyFunctions#0" />
+                <element signature="method#eval#0;class#AssemblyFunctions#0" />
+                <element signature="e#3361#4143#0" />
+                <element signature="e#3570#3622#0" />
+                <element signature="e#3652#4132#0" />
+                <element signature="e#4193#4322#0" />
+                <element signature="method#tokenize#0;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#getOperator#0;class#AssemblyFunctions#0" />
+                <element signature="method#getOperator#0;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#isNameLiteral#0;class#AssemblyFunctions#0" />
+                <element signature="method#isNameLiteral#0;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#isAccessLabel#0;class#AssemblyFunctions#0" />
+                <element signature="method#isAccessLabel#0;class#AssemblyFunctions#0" />
+                <element signature="docComment;method#extractAccessLabelWithIndexTokens#0;class#AssemblyFunctions#0" />
+                <element signature="method#extractAccessLabelWithIndexTokens#0;class#AssemblyFunctions#0" />
+                <element signature="e#8929#9144#0" />
+                <element signature="e#9183#9259#0" />
+                <element signature="docComment;method#isJumpLabel#0;class#AssemblyFunctions#0" />
+                <element signature="method#isJumpLabel#0;class#AssemblyFunctions#0" />
+                <element signature="method#isEntryLabel#0;class#AssemblyFunctions#0" />
+                <element signature="method#formatStringLiteral#0;class#AssemblyFunctions#0" />
+                <element signature="method#formatCharLiteral#0;class#AssemblyFunctions#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/AccessLabelToken.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyConstants/AssemblyConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+              <folding>
+                <element signature="docComment;field#BIT_ARCHITECTURE#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#SINGLE_LINE_COMMENT#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#SECTION_SEPARATOR#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#INCLUDE_FLAG#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#AVAILABLE_SECTIONS#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#VALID_REGISTRY_NAMES#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#MIN_REGISTRY_INDEX#0;class#AssemblyConstants#0" />
+                <element signature="method#getValidRegistryIndices#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#INCLUDE_STATEMENT_SEPARATOR#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#VALID_CHARS#0;class#AssemblyConstants#0" />
+                <element signature="docComment;field#SGN_INTEGER_MAX_VALUE#0;class#AssemblyConstants#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>compi</find>
+      <find>lines</find>
+      <find>lowerCase</find>
+      <find>AssemblyCons</find>
+      <find>TODO</find>
+      <find>Assembly</find>
+      <find>&quot;)</find>
+      <find>&quot;</find>
+      <find>public static final Alphabet</find>
+      <find>=</find>
+      <find>isWhite</find>
+      <find>nonImp</find>
+      <find>NonValidExpression</find>
+      <find>Constants</find>
+      <find>is missing</find>
+      <find>must conta</find>
+      <find>tol</find>
+      <find>stringToken</find>
+      <find>startsWith</find>
+      <find>'</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyInstructions/DATA_Instruction.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyInstructions/INCLUDE_Instruction.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyInstructions/TEXT_Instruction.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyInstructions/VAR_Instruction.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/OP.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongOperatorNameException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/NonValidOperatorException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/Operator.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongNameLiteralFound.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongNameLiteralException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyFunctionality/LanguagePackages.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyConstants/LanguagePackages.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyConstants/LanguagePackage.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyConstants/Alphabets.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/NonValidNameLiteralException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongAccessLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/NonValidAccessLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/ConstantExpressionToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongExpressionException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongAccessLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongExpressionException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongNameLiteralException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongOperatorNameException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/Token.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/NonValidLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/IntegerExpressionToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/LabelToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyInstructions/Instruction.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/ExpressionToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/NameLiteralToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/OperatorToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyConstants/Operators.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/AccessLabelWithIndexToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/RegistryAccessToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTestingCases/CommentFilterTester.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/CodeFormatter.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/JumpLabelToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongEntryLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidEntryLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongEntryLabelException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/AccessLabelToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/EntryLabelToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/NonValidStringException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyExceptions/WrongStringException.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/StringToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyConstants/AssemblyConstants.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTestingCases/TokensTester.java" />
+        <option value="$PROJECT_DIR$/testCases.txt" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyTokens/StringLiteralToken.java" />
+        <option value="$PROJECT_DIR$/src/Assembly/AssemblyFunctionality/AssemblyFunctions.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="159" />
+    <option name="width" value="1440" />
+    <option name="height" value="790" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="Inputs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+              <item name="AssemblyConstants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+              <item name="AssemblyExceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+              <item name="AssemblyExceptions" type="462c0819:PsiDirectoryNode" />
+              <item name="PreprocessorExceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+              <item name="AssemblyFunctionality" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+              <item name="AssemblyTestingCases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Language" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Assembly" type="462c0819:PsiDirectoryNode" />
+              <item name="AssemblyTokens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Language" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SS19/GAD/Blatt 6 (Merge- and QuickSort)" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Assembly.AssemblyExceptions" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.TokensTester.stringLiteralTokenTest_1">
+    <configuration name="TokensTester.entryLabelTokenTest_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="H-Language" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Assembly.AssemblyTestingCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Assembly.AssemblyTestingCases" />
+      <option name="MAIN_CLASS_NAME" value="Assembly.AssemblyTestingCases.TokensTester" />
+      <option name="METHOD_NAME" value="entryLabelTokenTest_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokensTester.entryLabelTokenTest_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="H-Language" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Assembly.AssemblyTestingCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Assembly.AssemblyTestingCases" />
+      <option name="MAIN_CLASS_NAME" value="Assembly.AssemblyTestingCases.TokensTester" />
+      <option name="METHOD_NAME" value="entryLabelTokenTest_2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokensTester.jumpLabelTokenTest_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="H-Language" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Assembly.AssemblyTestingCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Assembly.AssemblyTestingCases" />
+      <option name="MAIN_CLASS_NAME" value="Assembly.AssemblyTestingCases.TokensTester" />
+      <option name="METHOD_NAME" value="jumpLabelTokenTest_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokensTester.stringLiteralTokenTest_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="H-Language" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Assembly.AssemblyTestingCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Assembly.AssemblyTestingCases" />
+      <option name="MAIN_CLASS_NAME" value="Assembly.AssemblyTestingCases.TokensTester" />
+      <option name="METHOD_NAME" value="stringLiteralTokenTest_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokensTester.stringLiteralTokenTest_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="H-Language" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Assembly.AssemblyTestingCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Assembly.AssemblyTestingCases" />
+      <option name="MAIN_CLASS_NAME" value="Assembly.AssemblyTestingCases.TokensTester" />
+      <option name="METHOD_NAME" value="stringLiteralTokenTest_2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TokensTester.stringLiteralTokenTest_1" />
+        <item itemvalue="JUnit.TokensTester.stringLiteralTokenTest_2" />
+        <item itemvalue="JUnit.TokensTester.entryLabelTokenTest_2" />
+        <item itemvalue="JUnit.TokensTester.entryLabelTokenTest_1" />
+        <item itemvalue="JUnit.TokensTester.jumpLabelTokenTest_1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16348fd1-1576-41df-aeec-912db4a24f85" name="Default Changelist" comment="" />
+      <created>1561288012989</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561288012989</updated>
+      <workItem from="1561288017511" duration="14861000" />
+      <workItem from="1561304051054" duration="7109000" />
+      <workItem from="1561331527481" duration="3027000" />
+      <workItem from="1561384701052" duration="122000" />
+      <workItem from="1561395029128" duration="2272000" />
+      <workItem from="1561447509695" duration="2522000" />
+      <workItem from="1561486008045" duration="2067000" />
+      <workItem from="1561499686849" duration="9128000" />
+      <workItem from="1561554958155" duration="15011000" />
+      <workItem from="1561633128184" duration="16548000" />
+      <workItem from="1561965837000" duration="2221000" />
+      <workItem from="1561999374072" duration="1505000" />
+      <workItem from="1562022049458" duration="6718000" />
+      <workItem from="1562084298344" duration="8045000" />
+      <workItem from="1562156865793" duration="417000" />
+      <workItem from="1562174479640" duration="3557000" />
+      <workItem from="1562222700476" duration="5209000" />
+      <workItem from="1562317495709" duration="2983000" />
+      <workItem from="1562332154940" duration="715000" />
+      <workItem from="1562518506611" duration="10231000" />
+      <workItem from="1562578565676" duration="8905000" />
+      <workItem from="1562701587414" duration="6348000" />
+      <workItem from="1562784632342" duration="1958000" />
+      <workItem from="1562833142461" duration="79000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 11h 48m 17s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 11h 54m 05s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 11h 54m 51s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 20h 50m 54s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 21h 01m 51s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 21h 05m 12s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 21h 05m 42s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_2 - 2019.07.10 at 21h 08m 43s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_2 - 2019.07.10 at 21h 10m 33s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TokensTester_stringLiteralTokenTest_1 - 2019.07.10 at 21h 13m 27s.xml">
+      <configuration name="TokensTester.stringLiteralTokenTest_1" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="131558000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4994618" visible="true" weight="0.19850586" />
+      <window_info id="Structure" order="6" sideWeight="0.50053823" side_tool="true" weight="0.16862327" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.3444564" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39935413" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="TODO" order="11" visible="true" weight="0.22389667" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32938644" />
+      <window_info anchor="bottom" id="Statistic" order="13" weight="0.32938644" />
+      <window_info anchor="right" id="Theme Preview" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.2497332" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/notification/Failure.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/EachTestNotifier.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
+          <folding>
+            <element signature="e#2111#2112#0" expanded="true" />
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#5951#6086#0" expanded="true" />
+            <element signature="e#6085#6086#0" expanded="true" />
+            <element signature="e#6484#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/Result.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#2040#2041#0" expanded="true" />
+            <element signature="e#2083#2084#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidOperatorException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidRegistryAccessException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/NonImplementedFunctionalityException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/ExpressionToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="docComment;class#ExpressionToken#0" />
+            <element signature="docComment;method#handleExpression#0;class#ExpressionToken#0" />
+            <element signature="docComment;method#isRepresentable#0;class#ExpressionToken#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyConstants/Operators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2019#2020#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/OperatorToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyInstructions/BSS_Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyInstructions/Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTestingCases/CommentFilterTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="140" column="43" selection-start-line="140" selection-start-column="43" selection-end-line="140" selection-end-column="43" />
+          <folding>
+            <element signature="docComment;class#CommentFilterTester#0" />
+            <element signature="docComment;method#nullPointersTest#0;class#CommentFilterTester#0" />
+            <element signature="docComment;method#nullPointerInstructionsTest#0;class#CommentFilterTester#0" />
+            <element signature="docComment;method#WrongBracketsClosingTestTolerate#0;class#CommentFilterTester#0" />
+            <element signature="docComment;method#singleLineCommentsTests#0;class#CommentFilterTester#0" />
+            <element signature="docComment;method#multipleLineCommentsTest#0;class#CommentFilterTester#0" />
+            <element signature="docComment;method#WrongBracketsClosingTest#0;class#CommentFilterTester#0" />
+            <element signature="e#4332#4333#0" expanded="true" />
+            <element signature="e#4393#4394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/Preprocessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-721">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/IntegerExpressionToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="docComment;method#IntegerExpressionToken#0;class#IntegerExpressionToken#0" />
+            <element signature="method#IntegerExpressionToken#0;class#IntegerExpressionToken#0" />
+            <element signature="e#1316#1382#0" />
+            <element signature="e#1418#1571#0" />
+            <element signature="docComment;method#IntegerExpressionToken#1;class#IntegerExpressionToken#0" />
+            <element signature="method#IntegerExpressionToken#1;class#IntegerExpressionToken#0" />
+            <element signature="e#1960#2063#0" />
+            <element signature="e#2099#2259#0" />
+            <element signature="docComment;method#handleExpression#0;class#IntegerExpressionToken#0" />
+            <element signature="e#3174#3302#0" />
+            <element signature="docComment;method#isRepresentable#0;class#IntegerExpressionToken#0" />
+            <element signature="method#isRepresentable#0;class#IntegerExpressionToken#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/CodeFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#formattedCode#0;class#CodeFormatter#0" />
+            <element signature="docComment;method#getFormattedCode#0;class#CodeFormatter#0" />
+            <element signature="docComment;method#CodeFormatter#0;class#CodeFormatter#0" />
+            <element signature="method#CodeFormatter#0;class#CodeFormatter#0" />
+            <element signature="docComment;method#CodeFormatter#1;class#CodeFormatter#0" />
+            <element signature="method#CodeFormatter#1;class#CodeFormatter#0" />
+            <element signature="docComment;field#isLongComment#0;class#CodeFormatter#0" />
+            <element signature="docComment;method#formatCode#0;class#CodeFormatter#0" />
+            <element signature="docComment;method#handleLine#0;class#CodeFormatter#0" />
+            <element signature="docComment;method#handleMixedLine#0;class#CodeFormatter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidEntryLabelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidAccessLabelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#186#187#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidJumpLabelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidNameLiteralException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidExpressionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/UndefinedSectionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongAccessLabelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongCommentFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongEntryLabelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongExpressionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongFilePathException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongJumpLabelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongNameLiteralException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongOperatorNameException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongRegistryIndexException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="62" lean-forward="true" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongRegistryNameException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongSectionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/NameLiteralToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/RegistryAccessToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding>
+            <element signature="docComment;method#RegistryAccessToken#0;class#RegistryAccessToken#0" />
+            <element signature="method#RegistryAccessToken#0;class#RegistryAccessToken#0" />
+            <element signature="e#1649#1723#0" />
+            <element signature="e#1766#1926#0" />
+            <element signature="docComment;method#RegistryAccessToken#1;class#RegistryAccessToken#0" />
+            <element signature="method#RegistryAccessToken#1;class#RegistryAccessToken#0" />
+            <element signature="e#2446#2564#0" />
+            <element signature="e#2632#2852#0" />
+            <element signature="docComment;method#RegistryAccessToken#2;class#RegistryAccessToken#0" />
+            <element signature="method#RegistryAccessToken#2;class#RegistryAccessToken#0" />
+            <element signature="e#3580#3698#0" />
+            <element signature="e#3796#4016#0" />
+            <element signature="docComment;method#handleRegistryAccess#0;class#RegistryAccessToken#0" />
+            <element signature="method#handleRegistryAccess#0;class#RegistryAccessToken#0" />
+            <element signature="docComment;method#handleRegistryName#0;class#RegistryAccessToken#0" />
+            <element signature="method#handleRegistryName#0;class#RegistryAccessToken#0" />
+            <element signature="docComment;method#handleRegistryIndex#0;class#RegistryAccessToken#0" />
+            <element signature="method#handleRegistryIndex#0;class#RegistryAccessToken#0" />
+            <element signature="docComment;method#handleRegistryIndex#1;class#RegistryAccessToken#0" />
+            <element signature="method#handleRegistryIndex#1;class#RegistryAccessToken#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/JumpLabelToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/PreprocessorExceptions/NonValidStringLiteralException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyExceptions/FunctionalExceptions/WrongStringLiteralException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/EntryLabelToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="docComment;class#Token#0" />
+            <element signature="docComment;field#value#0;class#Token#0" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/AccessLabelWithIndexToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="method#AccessLabelWithIndexToken#0;class#AccessLabelWithIndexToken#0" />
+            <element signature="docComment;method#handleAccessLabelWithIndex#0;class#AccessLabelWithIndexToken#0" />
+            <element signature="method#handleAccessLabelWithIndex#0;class#AccessLabelWithIndexToken#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/StringLiteralToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCases.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTestingCases/TokensTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="940" column="4" selection-start-line="940" selection-start-column="4" selection-end-line="940" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#TokensTester#0" />
+            <element signature="method#separate#0;class#TokensTester#0" />
+            <element signature="docComment;method#registryAccessTokenTest_1_1#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_1_1#0;class#TokensTester#0" />
+            <element signature="e#1338#1820#1" />
+            <element signature="e#1464#1810#1" />
+            <element signature="docComment;method#registryAccessTokenTest_1_2#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_1_2#0;class#TokensTester#0" />
+            <element signature="e#3072#3419#1" />
+            <element signature="docComment;method#registryAccessTokenTest_1_3#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_1_3#0;class#TokensTester#0" />
+            <element signature="e#4448#4799#1" />
+            <element signature="docComment;method#registryAccessTokenTest_2_1#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_2_1#0;class#TokensTester#0" />
+            <element signature="e#6066#6339#1" />
+            <element signature="e#6084#6182#0" />
+            <element signature="e#6225#6329#0" />
+            <element signature="docComment;method#registryAccessTokenTest_2_2#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_2_2#0;class#TokensTester#0" />
+            <element signature="e#7252#7525#1" />
+            <element signature="e#7270#7368#0" />
+            <element signature="e#7411#7515#0" />
+            <element signature="docComment;method#registryAccessTokenTest_2_3#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_2_3#0;class#TokensTester#0" />
+            <element signature="e#8598#8868#1" />
+            <element signature="e#8616#8711#0" />
+            <element signature="e#8754#8858#0" />
+            <element signature="docComment;method#registryAccessTokenTest_2_4#0;class#TokensTester#0" />
+            <element signature="method#registryAccessTokenTest_2_4#0;class#TokensTester#0" />
+            <element signature="e#10049#10304#1" />
+            <element signature="e#10067#10147#0" />
+            <element signature="e#10190#10294#0" />
+            <element signature="docComment;method#operatorTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#operatorTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#11235#11590#1" />
+            <element signature="docComment;method#operatorTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#operatorTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#12606#12837#1" />
+            <element signature="e#12624#12686#0" />
+            <element signature="e#12723#12827#0" />
+            <element signature="docComment;method#nameLiteralTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#nameLiteralTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#14044#14428#1" />
+            <element signature="docComment;method#nameLiteralTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#nameLiteralTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#15435#15681#1" />
+            <element signature="e#15453#15527#0" />
+            <element signature="e#15567#15671#0" />
+            <element signature="docComment;method#accessLabelTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#accessLabelTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#16729#17113#1" />
+            <element signature="docComment;method#accessLabelTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#accessLabelTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#18343#18589#1" />
+            <element signature="e#18361#18435#0" />
+            <element signature="e#18475#18579#0" />
+            <element signature="docComment;method#integerExpressionTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#integerExpressionTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#19617#20036#1" />
+            <element signature="docComment;method#integerExpressionTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#integerExpressionTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#21260#21517#1" />
+            <element signature="e#21278#21364#0" />
+            <element signature="e#21403#21507#0" />
+            <element signature="docComment;method#jumpLabelTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#jumpLabelTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#22360#22683#1" />
+            <element signature="docComment;method#jumpLabelTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#jumpLabelTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#23885#24125#1" />
+            <element signature="e#23903#23973#0" />
+            <element signature="e#24011#24115#0" />
+            <element signature="docComment;method#accessLabelWithIndexTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#accessLabelWithIndexTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#25065#25486#1" />
+            <element signature="docComment;method#accessLabelWithIndexTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#accessLabelWithIndexTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#26985#27249#1" />
+            <element signature="e#27003#27095#0" />
+            <element signature="e#27135#27239#0" />
+            <element signature="docComment;method#entryLabelTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#entryLabelTokenTest_1#0;class#TokensTester#0" />
+            <element signature="e#28047#28377#1" />
+            <element signature="docComment;method#entryLabelTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#entryLabelTokenTest_2#0;class#TokensTester#0" />
+            <element signature="e#29543#29786#1" />
+            <element signature="e#29561#29633#0" />
+            <element signature="e#29672#29776#0" />
+            <element signature="docComment;method#stringLiteralTokenTest_1#0;class#TokensTester#0" />
+            <element signature="method#stringLiteralTokenTest_1#0;class#TokensTester#0" />
+            <element signature="docComment;method#stringLiteralTokenTest_2#0;class#TokensTester#0" />
+            <element signature="method#stringLiteralTokenTest_2#0;class#TokensTester#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyConstants/Opcodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyTokens/AccessLabelToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyConstants/AssemblyConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <folding>
+            <element signature="docComment;field#BIT_ARCHITECTURE#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#SINGLE_LINE_COMMENT#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#SECTION_SEPARATOR#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#INCLUDE_FLAG#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#AVAILABLE_SECTIONS#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#VALID_REGISTRY_NAMES#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#MIN_REGISTRY_INDEX#0;class#AssemblyConstants#0" />
+            <element signature="method#getValidRegistryIndices#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#INCLUDE_STATEMENT_SEPARATOR#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#VALID_CHARS#0;class#AssemblyConstants#0" />
+            <element signature="docComment;field#SGN_INTEGER_MAX_VALUE#0;class#AssemblyConstants#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembly/AssemblyFunctionality/AssemblyFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="251" column="79" selection-start-line="251" selection-start-column="79" selection-end-line="251" selection-end-column="79" />
+          <folding>
+            <element signature="docComment;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#isRegistryName#0;class#AssemblyFunctions#0" />
+            <element signature="method#isRegistryName#0;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#isRegistryIndex#0;class#AssemblyFunctions#0" />
+            <element signature="method#isRegistryIndex#0;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#eval#0;class#AssemblyFunctions#0" />
+            <element signature="method#eval#0;class#AssemblyFunctions#0" />
+            <element signature="e#3361#4143#0" />
+            <element signature="e#3570#3622#0" />
+            <element signature="e#3652#4132#0" />
+            <element signature="e#4193#4322#0" />
+            <element signature="method#tokenize#0;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#getOperator#0;class#AssemblyFunctions#0" />
+            <element signature="method#getOperator#0;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#isNameLiteral#0;class#AssemblyFunctions#0" />
+            <element signature="method#isNameLiteral#0;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#isAccessLabel#0;class#AssemblyFunctions#0" />
+            <element signature="method#isAccessLabel#0;class#AssemblyFunctions#0" />
+            <element signature="docComment;method#extractAccessLabelWithIndexTokens#0;class#AssemblyFunctions#0" />
+            <element signature="method#extractAccessLabelWithIndexTokens#0;class#AssemblyFunctions#0" />
+            <element signature="e#8929#9144#0" />
+            <element signature="e#9183#9259#0" />
+            <element signature="docComment;method#isJumpLabel#0;class#AssemblyFunctions#0" />
+            <element signature="method#isJumpLabel#0;class#AssemblyFunctions#0" />
+            <element signature="method#isEntryLabel#0;class#AssemblyFunctions#0" />
+            <element signature="method#formatStringLiteral#0;class#AssemblyFunctions#0" />
+            <element signature="e#14023#14644#1" />
+            <element signature="e#14053#14520#1" />
+            <element signature="e#14526#14634#1" />
+            <element signature="method#formatCharLiteral#0;class#AssemblyFunctions#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.13513513" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
