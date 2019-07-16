@@ -1,6 +1,7 @@
 package Assembly;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
+import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongCommentFormatException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongFilePathException;
 import Assembly.AssemblyTestingCases.CommentFilterTester;
@@ -184,7 +185,7 @@ public class CodeFormatter {
         StringBuilder lineWithoutWhitespace = new StringBuilder();
         StringBuilder buffer = new StringBuilder();
         boolean isString = false;
-        char prevState = '\0';
+        char prevChar = '\0';
 
         for (int i = 0; i < lineToFormat.length(); i++) {
             // check if the current char is a whitespace char
@@ -198,7 +199,7 @@ public class CodeFormatter {
                 // add all non-whitespace chars found to the buffer
                 char charToAdd = lineToFormat.charAt(i);
                 // check if the char is a part of a string (check if it's not an escaped string separator as well)
-                if (charToAdd == AssemblyConstants.STRING_SEPARATOR && prevState != AssemblyConstants.ESCAPE_SEQUENCE)
+                if (charToAdd == AssemblyConstants.STRING_SEPARATOR && prevChar != AssemblyConstants.ESCAPE_SEQUENCE)
                     isString = !isString;
 
                 // if the char is not a part of a string, make it lowercase if it's a letter
@@ -211,8 +212,12 @@ public class CodeFormatter {
                     buffer.append(charToAdd);
             }
 
-            prevState = lineToFormat.charAt(i);
+            prevChar = lineToFormat.charAt(i);
         }
+
+        if (isString)
+            throw new WrongAssemblyLineException("\nWrong assembly line found:\n"
+            + "'" + lineToFormat + "' contains too many string separators");
 
         // add the rest found in buffer
         return buffer.length() > 0
@@ -221,7 +226,7 @@ public class CodeFormatter {
     }
 
     public static void main(String[] args) throws IOException {
-        String path = "/home/hamudi/Developing/Java/H-Language/Inputs/NumberPrinterAssembly.hlan";
+        String path = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
         CodeFormatter cf = new CodeFormatter(path);
         for (String line : cf.formattedCode)
             System.out.println(line);

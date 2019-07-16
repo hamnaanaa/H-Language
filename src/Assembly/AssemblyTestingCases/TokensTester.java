@@ -886,7 +886,7 @@ public class TokensTester {
         assertEquals(expectedExceptionsCounter, exceptionsCounter);
 
         System.out.println("\n\n" + exceptionsCounter + " out of " + expectedExceptionsCounter
-                + " were caught!");
+                + " exceptions were caught!");
         System.out.println(TESTS_SEPARATOR);
     }
 
@@ -915,7 +915,8 @@ public class TokensTester {
                 "\"\\\\\"",                         // "\"
                 "\"\\\\\\\"\"",                     // "\""
                 "\"esc\\caped\"",                   // "esccaped"
-                "\"'char'and''char''''''\\\"\""     // "'char'and'char''''''""
+                "\"'char'and''char''''''\\\"\"",    // "'char'and'char''''''""
+                "\"[][][(][][][))]\""
         };
 
         int expectedValidStringLiteralsCounter = validStringLiterals.length;
@@ -958,7 +959,8 @@ public class TokensTester {
                 "\"stringer\\\"",
                 "'chars",
                 "chars'",
-                "'chars'"
+                "'chars'",
+                "\'\\'"
         };
 
         int expectedExceptionsCounter = nonValidStringLiterals.length;
@@ -979,6 +981,8 @@ public class TokensTester {
                 + " exceptions were caught!");
         System.out.println(TESTS_SEPARATOR);
     }
+
+
 }
 
 

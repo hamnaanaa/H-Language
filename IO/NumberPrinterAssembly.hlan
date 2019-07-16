@@ -1,0 +1,102 @@
+{ Display the signed number stored in a:5 (-2^15 to 2^15-1)
+	INPUT:
+		-> a5 - number to print (OR MOV a:5, value for default value)
+	OUTPUT:
+		-> input number is printed on display with NEWLINE
+	USED_REG:
+		-> a5 - input
+		-> b13 - 0 as constant
+		-> a14 - 1 as boolean
+		-> b14 - i as counter
+	CHANGED_REG:
+		-> NONE
+}
+$$ include:
+# :: statements
+
+.. bss:
+<overhead> RES 13
+<reserver> RES 5
+	
+.. data:
+<array> DEF [15, 14, 13, 12, 11]
+<complex_array> DEF [(15 + 0x13), "Hello World!", [15, 13, 12, 11], 12]
+<string> DEF "Hello, \"{}} World!"
+<number> DEF 15
+ 
+.. variables:
+EQU value, 1587			# Number to print on the display
+EQU i, 10_000				# Greatest digit in 16-Bit
+EQU BOOL, 1				# Condition
+EQU NULL, 0				# Constant
+EQU dummie, 555		# Placeholder for JMP 
+EQU SGN_WORD_MINVALUE, "-32768"
+
+EQU testing, (15 + 0x13)
+EQU testing_two, "mov"
+EQU label_to_label, testing
+
+.. text:
+%% INITIALIZE:
+	PUSH a:5
+	PUSH b:13
+	PUSH a:14
+	PUSH b:14
+
+	MOV a:5, value			# INPUT: a5
+	MOV b:13, NULL          # b13 saves 0 as const
+	MOV a:14, BOOL	        # a14 saves 1 as boolean
+	MOV b:14, i         	# b14 saves 10 000
+
+%% FUNC:
+	CMP a:5, NULL           # check a5 ? 0
+	JL %NEGATIVE:           # goto NEGATIVE
+
+%% LOOP:
+	CMP b:14, NULL          # check if already all digits were outputted
+	JLE %DONE:				# goto DONE
+
+%% ZERO_DIGIT:
+	CMP a:14, NULL          # check if boolean 'is leading' true
+	JE %PRINTER:			# goto PRINT
+
+	PUSH a:5                # save old a5 for check
+	DIVR a:5, b:14          # a5 = a5 / i
+	JNE %NOTZERO:			# goto NOTZERO
+	POP a:5					# return old a5 value
+	DIVR b:14, 10           # i = i / 10
+	JMP %LOOP:				# goto LOOP
+
+%% NOTZERO:
+	POP a:5                 # return old a5 value
+	MOV a:14, NULL          # set bool 'is leading' to false
+
+%% PRINTER:
+	DIVR a:5, b:14			# a5 = a5 / i
+	ADD a:5, 0x30           # a5 = a5 + 0x30 for ASCII-digit
+	PRINT a:5               # PRINTDIGIT a5
+	MOV a:5, b:0            # a5 = a5 % i
+	DIVR b:14, 10           # i = i / 10
+	JMP %LOOP:              # goto LOOP
+
+%% NEGATIVE:
+	CMP a:5, -32768			# compare to min value
+	JE %MINVALUE:           # goto MINVALUE
+	PRINTSTR '-'            # print '-'
+	MUL a:5, -1             # a5 = -a5
+	JMP %LOOP:              # goto LOOP
+
+%% MINVALUE:
+	PRINTSTR SGN_WORD_MINVALUE	# print SGN_INT MINVALUE
+	
+%% TESTING:
+	PRINTSTR <array>[2]
+	MOV <overhead>, 15
+	
+
+%% DONE:
+	POP b:14
+	POP a:14
+	POP b:13
+	POP a:5
+	NEWLINE

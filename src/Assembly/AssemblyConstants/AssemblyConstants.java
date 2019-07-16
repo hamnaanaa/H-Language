@@ -25,6 +25,11 @@ public class AssemblyConstants {
     public static final char STRING_SEPARATOR = '"';
     public static final char CHAR_SEPARATOR = '\'';
     public static final char REGISTRY_ACCESS_SEPARATOR = ':';
+    public static final char OPERATOR_SEPARATOR = ',';
+    public static final char ARRAY_SEPARATOR_OPEN = '[';
+    public static final char ARRAY_SEPARATOR_CLOSE = ']';
+    public static final char PARENTHESIS_OPEN = '(';
+    public static final char PARENTHESIS_CLOSE = ')';
     public static boolean isWhitespace(char character) {
         return Character.isWhitespace(character);
     }

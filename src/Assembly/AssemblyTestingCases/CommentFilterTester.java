@@ -2,6 +2,7 @@ package Assembly.AssemblyTestingCases;
 
 import static org.junit.Assert.*;
 
+import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongCommentFormatException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongFilePathException;
 import Assembly.CodeFormatter;
@@ -148,5 +149,10 @@ public class CommentFilterTester {
         assertEquals(expectedOutput, realOutput.toString());
 
         System.out.println(realOutput.toString());
+    }
+
+    @Test(expected = WrongAssemblyLineException.class)
+    public void tooManyStringSeparators() {
+        System.out.println(new CodeFormatter(new String[]{"\"Hello, World\" \"  "}).getFormattedCode());
     }
 }

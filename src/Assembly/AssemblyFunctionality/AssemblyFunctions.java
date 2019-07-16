@@ -14,6 +14,7 @@ import Assembly.AssemblyTokens.Token;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -90,8 +91,13 @@ public class AssemblyFunctions {
     }
 
     // TODO : docs
-    public static Token[] tokenize(String line) {
+    public static String[] tokenize(String line) {
         // TODO : tokenize (maybe a separate class makes more sense?)
+        return Tokenizer.tokenize(line);
+    }
+
+    public static Token<?>[] tokenizeArray(String array) {
+        // TODO :
         return null;
     }
 
@@ -242,7 +248,6 @@ public class AssemblyFunctions {
         return isNameLiteral(entryLabel.substring(3, entryLabel.length() - 1));
     }
 
-    // TODO
     /**
      * Method to determine whether the given string literal is a valid string literal
      * Checks if the string literal is long enough, was opened and closed correctly and the string is a valid string
@@ -250,7 +255,11 @@ public class AssemblyFunctions {
      *
      * @param stringLiteral string literal to check
      * @return string if the given string literal is correct without separators
-     * @throws WrongStringLiteralException
+     * @throws WrongStringLiteralException if the given string literal is not long enough to be valid
+     *                                     OR if the given string literal was not opened or closed correctly
+     *                                     OR if the given string literal contains illegal chars (wrongly escaped)
+     *                                     OR if the close string literal separator was escaped
+     * @see AssemblyConstants for the valid string literal separators
      */
     public static String formatStringLiteral(String stringLiteral) throws WrongStringLiteralException {
         if (stringLiteral == null || stringLiteral.equals(""))
@@ -275,6 +284,7 @@ public class AssemblyFunctions {
         StringBuilder formattedStringBuilder = new StringBuilder();
         boolean isEscaped = false;
 
+        // check for illegal characters and escape sequences
         for (char character : characters) {
             if (!isEscaped) {
                 if (character == AssemblyConstants.ESCAPE_SEQUENCE)
@@ -297,7 +307,17 @@ public class AssemblyFunctions {
         return formattedStringBuilder.toString();
     }
 
-    // TODO: javadoc
+    /**
+     * Method to determine whether the given char literal is a valid char literal
+     * Checks if the char literal has correct length, was opened and closed correctly and the escape sequence is valid
+     *
+     * @param stringLiteral char literal to check
+     * @return char literal if the given char literal is correct without separators
+     * @throws WrongStringLiteralException if the given char literal is too long to be valid (not a single char)
+     *                                     OR if the given char literal was not opened or closed correctly
+     *                                     OR if the given char literal contains a single escape sequence
+     * @see AssemblyConstants for the valid char literal separators
+     */
     private static char formatCharLiteral(String stringLiteral) throws WrongStringLiteralException {
         if (stringLiteral.length() > 4)
             throw new WrongStringLiteralException("\nChar literal can only be a single character, but found: '"
@@ -315,5 +335,151 @@ public class AssemblyFunctions {
             throw new WrongStringLiteralException("\nChar literal with single escape sequence found: '"
                     + stringLiteral + "'");
     }
+}
+
+/**
+ * Private class, that tokenizes lines with H-Language Assembly instructions
+ * - splits the line into string tokens
+ * - parses the string tokens to assembly tokens
+ */
+class Tokenizer {
+    // TODO : change String[] to Token<?>[] and parse the string tokens
+    public static String[] tokenize(String line) throws WrongAssemblyLineException {
+        String[] rawTokens = extractRawTokens(line);
+        return rawTokens;
+    }
+
+    /**
+     * Method to split the given string line representing an H-Language Assembly instruction into string tokens
+     *
+     * @param line line that represents an H-Language Assembly instruction to split
+     * @return array of string tokens extracted from the given line
+     * @throws WrongAssemblyLineException if some wrong tokens/separators found
+     * @format see Tokenizer.pdf for the flow diagram
+     */
+    private static String[] extractRawTokens(String line) throws WrongAssemblyLineException {
+        ArrayList<String> stringTokens = new ArrayList<>();
+        StringBuilder buffer = new StringBuilder();
+        char[] chars = line.toCharArray();
+
+        // Monitor different possible special states
+        char prevChar = '\0';
+        int arraySeparatorsBalance = 0, parenthesisBalance = 0;
+        boolean isString = false, isChar = false, isLabelSeparator = false, isJumpLabel = false, isSeparable = true;
+
+        // Check sequentially the characters
+        for (char character : chars) {
+            // Two different branches: isSeparable or not
+            if ((!AssemblyConstants.isWhitespace(character) && character != AssemblyConstants.OPERATOR_SEPARATOR)
+                    || !isSeparable) {
+                // if not separable, new two branches: isString or not
+                if (isString || isChar) {
+                    switch (character) {
+                        // if isString, monitor string close separator
+                        case AssemblyConstants.STRING_SEPARATOR:
+                            if (!isChar)
+                                if (prevChar != AssemblyConstants.ESCAPE_SEQUENCE)
+                                    isString = false;
+                            break;
+
+                        case AssemblyConstants.CHAR_SEPARATOR:
+                            if (!isString)
+                                if (prevChar != AssemblyConstants.ESCAPE_SEQUENCE)
+                                    isChar = false;
+                            break;
+
+                        // everything can be added to the string
+                        default:
+                            break;
+                    }
+                } else {
+                    // if not a string part, check all other separators and states
+                    switch (character) {
+                        case AssemblyConstants.STRING_SEPARATOR:
+                            isString = true;
+                            break;
+                        case AssemblyConstants.CHAR_SEPARATOR:
+                            isChar = true;
+                            break;
+
+                        case AssemblyConstants.ARRAY_SEPARATOR_OPEN:
+                            arraySeparatorsBalance++;
+                            break;
+                        case AssemblyConstants.ARRAY_SEPARATOR_CLOSE:
+                            arraySeparatorsBalance--;
+                            if (arraySeparatorsBalance < 0)
+                                throw new WrongAssemblyLineException("\nWrong assembly line found:\n"
+                                        + "'" + line + "' contains too many index accesses/array close separators");
+                            break;
+
+                        case AssemblyConstants.PARENTHESIS_OPEN:
+                            parenthesisBalance++;
+                            break;
+                        case AssemblyConstants.PARENTHESIS_CLOSE:
+                            parenthesisBalance--;
+                            if (parenthesisBalance < 0)
+                                throw new WrongAssemblyLineException("\nWrong assembly line found:\n"
+                                        + "'" + line + "' contains too many close parenthesis");
+                            break;
+
+                        case AssemblyConstants.ACCESS_SEPARATOR_OPEN:
+                            isLabelSeparator = true;
+                            break;
+                        case AssemblyConstants.ACCESS_SEPARATOR_CLOSE:
+                            if (isLabelSeparator)
+                                isLabelSeparator = false;
+                            else
+                                throw new WrongAssemblyLineException("\nWrong assembly line found:\n"
+                                        + "'" + line + "' contains too many access label close separators");
+                            break;
+
+                        case AssemblyConstants.JUMP_LABEL_SEPARATOR_OPEN:
+                            isJumpLabel = true;
+                            break;
+                        case AssemblyConstants.JUMP_LABEL_SEPARATOR_CLOSE:
+                            isJumpLabel = false;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+                // add the final character if everything is fine
+                buffer.append(character);
+
+                // modify the current state
+                isSeparable = !isString && !isChar && parenthesisBalance == 0 && arraySeparatorsBalance == 0
+                        && !isLabelSeparator && !isJumpLabel;
+
+            } else {
+
+                // if was separated, add the existing buffer as a token
+                if (buffer.length() > 0)
+                    stringTokens.add(buffer.toString());
+                buffer.setLength(0);
+            }
+
+            // Monitor the previous char
+            prevChar = character;
+        }
+
+        // Add the last piece
+        if (buffer.length() > 0)
+            stringTokens.add(buffer.toString());
+
+        String[] allTokens = new String[stringTokens.size()];
+        for (int i = 0; i < allTokens.length; i++)
+            allTokens[i] = stringTokens.get(i);
+
+        // Check if the line was closed correctly
+        if (!isSeparable)
+            throw new WrongAssemblyLineException("\nWrong assembly line found:\n"
+                    + "'" + line + "' contains unclosed tokens");
+
+        return allTokens;
+    }
+
+
 }
 

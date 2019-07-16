@@ -13,8 +13,12 @@
         - jump label:                       %label:                     # done
         - entry label:                      %% initialize:              # done
         - string:                           "Hello, World!"             # done
-                                            "te\"" is "te""             # done
         - array:                            [15, ["hello"], (13+2)]     # TODO
+            possible tokens:
+        -- ["a", "b", "c", 'd']             string tokens
+        -- [15, "13", "(21+5)"]             expression tokens
+        -- 
+
 
 
 ##  Comments Sections:
