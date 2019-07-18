@@ -7,9 +7,9 @@ import Assembly.AssemblyExceptions.FunctionalExceptions.*;
 import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidAccessLabelException;
 import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidExpressionException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongEntryLabelException;
-import Assembly.AssemblyTokens.AccessLabelToken;
-import Assembly.AssemblyTokens.IntegerExpressionToken;
-import Assembly.AssemblyTokens.Token;
+import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidOperatorException;
+import Assembly.AssemblyExceptions.PreprocessorExceptions.PreproccessorException;
+import Assembly.AssemblyTokens.*;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -90,15 +90,47 @@ public class AssemblyFunctions {
         }
     }
 
-    // TODO : docs
-    public static String[] tokenize(String line) {
-        // TODO : tokenize (maybe a separate class makes more sense?)
-        return Tokenizer.tokenize(line);
+    /**
+     * Method to extract tokens out of the given string
+     *
+     * @param line string to extract tokens from
+     * @return array of tokens if the given string was successfully tokenized
+     * @throws WrongAssemblyLineException if error occurred while tokenizing the string or parsing into tokens
+     */
+    public static Token<?>[] tokenize(String line) throws WrongAssemblyLineException {
+        return Tokenizer.tokenize(line, true);
     }
 
-    public static Token<?>[] tokenizeArray(String array) {
-        // TODO :
-        return null;
+    /**
+     * Special Method for testing purposes:
+     * Extracts the tokens out of the given string as strings without parsing them into tokens
+     *
+     * @param line string to extract string tokens from
+     * @return array of strings representing extracted tokens before parsing
+     * @throws WrongAssemblyLineException if error occurred while tokenizing the string
+     */
+    public static String[] extractTokens(String line) throws WrongAssemblyLineException {
+        return Tokenizer.extractRawTokens(line, true);
+    }
+
+    /**
+     * Modified tokenize-Method for arrays to check and tokenize an array
+     *
+     * @param array array to check and tokenize
+     * @return array of tokens if the given array is valid and was successfully tokenized
+     * @throws WrongArrayException        if the given array is not valid
+     * @throws WrongAssemblyLineException if error occurred while tokenizing the array and parsing it into tokens
+     */
+    public static Token<?>[] tokenizeArray(String array) throws WrongArrayException, WrongAssemblyLineException {
+        if (array == null || array.length() < 2)
+            throw new WrongArrayException("\nNull-pointer array found");
+
+        if (array.startsWith(String.valueOf(AssemblyConstants.ARRAY_SEPARATOR_OPEN))
+                && array.endsWith(String.valueOf(AssemblyConstants.ARRAY_SEPARATOR_CLOSE))) {
+            return Tokenizer.tokenize(array.substring(1, array.length() - 1), false);
+        }
+
+        throw new WrongArrayException("\nThe given array '" + array + "' is not valid: Wrong separators found");
     }
 
     /**
@@ -343,10 +375,91 @@ public class AssemblyFunctions {
  * - parses the string tokens to assembly tokens
  */
 class Tokenizer {
-    // TODO : change String[] to Token<?>[] and parse the string tokens
-    public static String[] tokenize(String line) throws WrongAssemblyLineException {
-        String[] rawTokens = extractRawTokens(line);
-        return rawTokens;
+    public static Token<?>[] tokenize(String line, boolean spaceSeparator) throws WrongAssemblyLineException {
+        String[] rawTokens = extractRawTokens(line, spaceSeparator);
+
+        Token<?>[] parsedTokens = new Token<?>[rawTokens.length];
+        for (int i = 0; i < rawTokens.length; i++) {
+            Token<?> parsedToken = parseStringToken(rawTokens[i]);
+            parsedTokens[i] = (parsedToken);
+        }
+
+        return parsedTokens;
+    }
+
+    /**
+     * Method to parse a raw string token into a token object
+     * Idea how to recognize the token (sequentially):
+     * - array begins with '['
+     * - string/char begins with '"' or '"'
+     * - access label with index begins with '<' and ends with ']'
+     * - access label begins with '<'
+     * - entry label begins with '%%'
+     * - jump label begins with '%'
+     * - registry access contains ':'
+     * - expression begins with '(', '-' or digit
+     * - default:
+     * -- try to parse as a reserved word
+     * -- if not possible try as a variable
+     *
+     * @param rawToken raw string token to parse from
+     * @return subclass of token if the given raw string token is parsable (valid token)
+     * @throws WrongAssemblyLineException if error occurred while parsing the raw string token into token
+     */
+    private static Token<?> parseStringToken(String rawToken) throws WrongAssemblyLineException {
+        if (rawToken == null || rawToken.equals(""))
+            throw new WrongAssemblyLineException("\nNull-pointer token found");
+
+        try {
+            switch (rawToken.charAt(0)) {
+                // array
+                case AssemblyConstants.ARRAY_SEPARATOR_OPEN:
+                    return new ArrayToken(rawToken);
+
+                // string/char
+                case AssemblyConstants.CHAR_SEPARATOR:
+                case AssemblyConstants.STRING_SEPARATOR:
+                    return new StringLiteralToken(rawToken);
+
+                // access label with/without index
+                case AssemblyConstants.ACCESS_SEPARATOR_OPEN:
+                    return rawToken.endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE))
+                            ? new AccessLabelWithIndexToken(rawToken)
+                            : new AccessLabelToken(rawToken);
+
+                // entry/jump label
+                case AssemblyConstants.JUMP_LABEL_SEPARATOR_OPEN:
+                    return rawToken.length() > 1 && rawToken.substring(0, 2)
+                            .equals(AssemblyConstants.ENTRY_LABEL_SEPARATOR_OPEN)
+                            ? new EntryLabelToken(rawToken)
+                            : new JumpLabelToken(rawToken);
+
+                // expression
+                case AssemblyConstants.PARENTHESIS_OPEN:
+                    return new IntegerExpressionToken(rawToken);
+
+                default:
+                    // constant expression
+                    if (AssemblyConstants.isNumeric(rawToken.charAt(0)))
+                        return new IntegerExpressionToken(rawToken);
+
+                        // registry access
+                    else if (rawToken.contains(":"))
+                        return new RegistryAccessToken(rawToken);
+                    else
+                        // reserved word
+                        try {
+                            return new OperatorToken(rawToken);
+                            // name literal (variable)
+                        } catch (NonValidOperatorException e) {
+                            return new NameLiteralToken(rawToken);
+                        }
+            }
+            // unified exception
+        } catch (PreproccessorException e) {
+            throw new WrongAssemblyLineException("\nError in token '" + rawToken + "' occurred:"
+                    + e.getMessage());
+        }
     }
 
     /**
@@ -357,7 +470,7 @@ class Tokenizer {
      * @throws WrongAssemblyLineException if some wrong tokens/separators found
      * @format see Tokenizer.pdf for the flow diagram
      */
-    private static String[] extractRawTokens(String line) throws WrongAssemblyLineException {
+    public static String[] extractRawTokens(String line, boolean spaceSeparator) throws WrongAssemblyLineException {
         ArrayList<String> stringTokens = new ArrayList<>();
         StringBuilder buffer = new StringBuilder();
         char[] chars = line.toCharArray();
@@ -455,9 +568,11 @@ class Tokenizer {
             } else {
 
                 // if was separated, add the existing buffer as a token
-                if (buffer.length() > 0)
-                    stringTokens.add(buffer.toString());
-                buffer.setLength(0);
+                if (spaceSeparator || character == AssemblyConstants.OPERATOR_SEPARATOR) {
+                    if (buffer.length() > 0)
+                        stringTokens.add(buffer.toString());
+                    buffer.setLength(0);
+                }
             }
 
             // Monitor the previous char

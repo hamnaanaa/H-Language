@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// TODO : check the magic number before reading the file for correctness
 /**
  * Class that represents the first step of the Assembly process:
  * -> read all lines from the given file

@@ -1,6 +1,6 @@
 package Assembly.AssemblyExceptions.PreprocessorExceptions;
 
-public class NonValidOperatorException extends RuntimeException {
+public class NonValidOperatorException extends PreproccessorException {
     public NonValidOperatorException(String message) {
         super(message);
     }

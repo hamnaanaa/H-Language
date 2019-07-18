@@ -13,11 +13,23 @@
         - jump label:                       %label:                     # done
         - entry label:                      %% initialize:              # done
         - string:                           "Hello, World!"             # done
-        - array:                            [15, ["hello"], (13+2)]     # TODO
+        - array:                            [15, ["hello"], (13+2)]     # done
             possible tokens:
         -- ["a", "b", "c", 'd']             string tokens
         -- [15, "13", "(21+5)"]             expression tokens
-        -- 
+
+        -> how to recognize the token:
+            - array begins with '['
+            - string/char begins with '"' or '"'
+            - access label with index begins with '<' and ends with ']'
+            - access label begins with '<'
+            - entry label begins with '%%'
+            - jump label begins with '%'
+            - registry access contains ':'
+            - expression begins with '(' or digit
+            - default:
+            -- try to parse as a reserved word
+            -- if not possible try as a variable
 
 
 

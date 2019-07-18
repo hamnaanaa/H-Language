@@ -30,8 +30,17 @@ public class AssemblyConstants {
     public static final char ARRAY_SEPARATOR_CLOSE = ']';
     public static final char PARENTHESIS_OPEN = '(';
     public static final char PARENTHESIS_CLOSE = ')';
+
+    /**
+     * Data types
+* @param character character to check
+* @return true if it's the correct data type
+     */
     public static boolean isWhitespace(char character) {
         return Character.isWhitespace(character);
+    }
+    public static boolean isNumeric(char character) {
+        return DECIMAL.contains(character);
     }
 
     /**

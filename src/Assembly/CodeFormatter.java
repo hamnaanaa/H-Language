@@ -4,7 +4,6 @@ import Assembly.AssemblyConstants.AssemblyConstants;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongCommentFormatException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongFilePathException;
-import Assembly.AssemblyTestingCases.CommentFilterTester;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,7 +48,7 @@ public class CodeFormatter {
      * Constructor for CodeFormatter TESTING, that takes a string array of instructions to format
      *
      * @param instructionsToTest string array of instructions to format
-     * @see CommentFilterTester
+     * @format see tests
      */
     public CodeFormatter(String[] instructionsToTest) {
         this.formattedCode = new ArrayList<>(Arrays.asList(instructionsToTest));
@@ -122,7 +121,7 @@ public class CodeFormatter {
      * @param line          line to format
      * @param bracketsState state of brackets at the begin of the line (does this line begin as a part of long comment?)
      * @return formatted line with no comments and unnecessary whitespaces
-     * @see CommentFilterTester
+     * @format see tests
      */
     private String handleMixedLine(String line, int bracketsState) {
         // instructions to extract between comments
@@ -217,7 +216,7 @@ public class CodeFormatter {
 
         if (isString)
             throw new WrongAssemblyLineException("\nWrong assembly line found:\n"
-            + "'" + lineToFormat + "' contains too many string separators");
+                    + "'" + lineToFormat + "' contains too many string separators");
 
         // add the rest found in buffer
         return buffer.length() > 0

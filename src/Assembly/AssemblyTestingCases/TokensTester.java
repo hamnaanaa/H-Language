@@ -532,7 +532,7 @@ public class TokensTester {
                 "l>",
                 "l",
                 ".",
-                "..",
+                "",
                 "...",
                 "!",
                 "<!>",

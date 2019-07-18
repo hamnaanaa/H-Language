@@ -1,7 +1,6 @@
-package Assembly.AssemblyTestingCases;
-
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
+import Assembly.AssemblyTokens.Token;
 import Assembly.CodeFormatter;
 import org.junit.Test;
 
@@ -16,9 +15,11 @@ import static org.junit.Assert.assertEquals;
  *
  * @see AssemblyFunctions for the implementation details of the Tokenizer
  */
+@SuppressWarnings("Duplicates")
 public class TokenizerTester {
 
     private static String TESTS_SEPARATOR = separate(100);
+    private static String FILE_PATH = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
 
     @SuppressWarnings("SameParameterValue")
     private static String separate(int i) {
@@ -28,20 +29,20 @@ public class TokenizerTester {
     }
 
     /**
-     * Method to test the extraction of all tokens from all lines of a typical H-Language program
+     * Method to test the extraction of all tokens from all lines of a typical H-Language program as Strings
      *
      * @throws IOException if was not able to read the program file
      */
     @Test
-    public void allLinesTest() throws IOException {
+    public void allLines_StringTest() throws IOException {
         System.out.println("\n## ALL_LINES_TEST:");
 
-        String path = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
+        String path = FILE_PATH;
         CodeFormatter cf = new CodeFormatter(path);
         ArrayList<String> formattedCode = cf.getFormattedCode();
 
         for (String line : formattedCode) {
-            String[] lineTokens = AssemblyFunctions.tokenize(line);
+            String[] lineTokens = AssemblyFunctions.extractTokens(line);
             System.out.println(Arrays.toString(lineTokens) + " TOKENS EXTRACTED: " + lineTokens.length);
         }
     }
@@ -50,7 +51,7 @@ public class TokenizerTester {
      * Method to test the extraction of invalid (unclosed) tokens
      */
     @Test
-    public void unclosedTokensTest() {
+    public void unclosedTokens_StringTest() {
         System.out.println("\n## UNCLOSED_TOKENS_TEST:");
 
         String[] wrongLines = new String[]{
@@ -60,7 +61,9 @@ public class TokenizerTester {
                 "equ var ((15+16)",                 //  too many parenthesis open
                 "<array> def \"hello world\\\"",    //  escaped string separator close
                 "<array> def [5 + 13, \"Hello World\", 'a', ((12 + 13) * 2)",     // array was not closed
-                "(15 + 12) * 3)"
+                "(15 + 12) * 3)",                   // too many parenthesis open
+                "\"string'",                        // different string separators used
+                "'string\""                         // different string separators used
         };
 
         int expectedExceptionsCounter = wrongLines.length;
@@ -68,7 +71,7 @@ public class TokenizerTester {
 
         for (String wrongLine : wrongLines) {
             try {
-                String[] tokens = AssemblyFunctions.tokenize(wrongLine);
+                String[] tokens = AssemblyFunctions.extractTokens(wrongLine);
                 System.out.println("\n" + Arrays.toString(tokens)
                         + " TOKENS EXTRACTED: " + tokens.length);
             } catch (WrongAssemblyLineException e) {
@@ -88,7 +91,7 @@ public class TokenizerTester {
      * Method to test the correct extraction of special cases (separators in strings)
      */
     @Test
-    public void separatorsInStringsTest() {
+    public void ignoredSeparators_StringTest() {
         System.out.println("\n## SEPARATORS_IN_STRINGS_TEST:");
 
         String[] correctLines = new String[]{
@@ -105,7 +108,7 @@ public class TokenizerTester {
         int correctLinesCounter = 0;
 
         for (String correctLine : correctLines) {
-            String[] tokens = AssemblyFunctions.tokenize(correctLine);
+            String[] tokens = AssemblyFunctions.extractTokens(correctLine);
             System.out.println(Arrays.toString(tokens) + " TOKENS EXTRACTED: " + tokens.length);
 
             correctLinesCounter++;
@@ -122,7 +125,7 @@ public class TokenizerTester {
      * Method to test the extraction of tokens containing spaces
      */
     @Test
-    public void spacesInTokensTest() {
+    public void spacesInTokens_StringTest() {
         System.out.println("\n## SPACES_IN_TOKENS_TEST:");
 
         String[] correctOneTokenLines = new String[]{
@@ -139,7 +142,7 @@ public class TokenizerTester {
         int correctOneTokenLinesCounter = 0;
 
         for (String correctOneTokenLine : correctOneTokenLines) {
-            String[] tokens = AssemblyFunctions.tokenize(correctOneTokenLine);
+            String[] tokens = AssemblyFunctions.extractTokens(correctOneTokenLine);
             System.out.println(Arrays.toString(tokens) + " TOKENS EXTRACTED: " + tokens.length);
 
             if (tokens.length == 1)
@@ -151,5 +154,36 @@ public class TokenizerTester {
         System.out.println("\n\n" + correctOneTokenLinesCounter + " out of " + expectedCorrectOneTokenLinesCounter
                 + " lines were correctly tokenized!");
         System.out.println(TESTS_SEPARATOR);
+    }
+
+    /**
+     * Method to test the extraction of all tokens from all lines of a typical H-Language program as Tokens
+     *
+     * @throws IOException if was not able to read the program file
+     */
+    @Test
+    public void allTokensParser_TokenTest() throws IOException {
+        System.out.println("\n## ALL_TOKENS_PARSER_TEST:");
+
+        String path = FILE_PATH;
+        CodeFormatter cf = new CodeFormatter(path);
+        ArrayList<String> formattedCode = cf.getFormattedCode();
+        StringBuilder builder = new StringBuilder();
+
+        for (String line : formattedCode) {
+            try {
+                Token<?>[] lineTokens = AssemblyFunctions.tokenize(line);
+                System.out.println("TOKENS EXTRACTED: " + lineTokens.length);
+                for (Token token : lineTokens) {
+                    String className = token.getClass().toString();
+                    System.out.println("- CLASS: " + className.substring(className.lastIndexOf('.')) + " < " + token + " >");
+                }
+                System.out.println();
+            } catch (RuntimeException e) {
+                builder.append("\nException happened in line '").append(line).append("'").append(e.getMessage()).append("\n");
+            }
+        }
+
+        System.out.println("### EXCEPTED:\n" + builder);
     }
 }

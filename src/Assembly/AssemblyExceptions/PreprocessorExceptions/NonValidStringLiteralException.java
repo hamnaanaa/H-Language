@@ -1,6 +1,6 @@
 package Assembly.AssemblyExceptions.PreprocessorExceptions;
 
-public class NonValidStringLiteralException extends RuntimeException {
+public class NonValidStringLiteralException extends PreproccessorException {
     public NonValidStringLiteralException(String message) {
         super(message);
     }

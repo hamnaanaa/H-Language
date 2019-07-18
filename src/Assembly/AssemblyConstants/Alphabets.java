@@ -15,9 +15,9 @@ public enum Alphabets {
     OCTAL("01234567"),
 
     /**
-     * The decimal alphabet { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+     * The decimal alphabet { -, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
      */
-    DECIMAL("0123456789"),
+    DECIMAL("-0123456789"),
 
     /**
      * The hexadecimal alphabet { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, a, b, c, d, e, f }
