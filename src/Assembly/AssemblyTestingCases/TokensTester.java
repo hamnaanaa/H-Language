@@ -1,9 +1,9 @@
-package Assembly.AssemblyTestingCases;
-
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.*;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.*;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyTokens.*;
+import Assembly.CodeFormatter;
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -140,8 +140,8 @@ public class TokensTester {
     /***
      * Method to test the initialization of a RegistryAccessToken with a wrong registry name
      * (UpperCase is not tested, because CodeFormatter makes sure there is no UpperCase-Input)
-     * @see Assembly.CodeFormatter for the lowercase implementation
-     * @see Assembly.AssemblyConstants.AssemblyConstants for the list of allowed registry names
+     * @see CodeFormatter for the lowercase implementation
+     * @see AssemblyConstants for the list of allowed registry names
      */
     @Test
     public void registryAccessTokenTest_2_1() {
@@ -982,7 +982,46 @@ public class TokensTester {
         System.out.println(TESTS_SEPARATOR);
     }
 
+    // TODO : javadoc
+    @Test
+    public void arrayTokenTest_1() {
+        System.out.println("\n## VALID_ARRAY_TEST:");
 
+        String[] validArrays = new String[]{
+                "[]",                                   // empty array
+                "[1]",                                  // single value
+                "[0, 1, 2, 3, 4, 5]",                   // normal numbers
+                "[-5, -4, -3, -2, -1]",                 // negative numbers
+                "[15, (15), ((15)), (((15)))]",         // redundant parenthesis
+                "[-15, -(15), -(-(-15)), -((-(-15)))]", // redundant parenthesis with negative numbers
+                "[0,1,2,3,4,5]",                        // no spaces
+                "[-5,-4,-3,-2,-1]",                     // no spaces negative numbers
+                "[0, 1,2, 3, 4,5,  6]",                 // redundant (different) whitespaces
+                "[\"\", \" \", \"_\", \"15\"]",         // string array
+                "[[1,2,3], [4,5,6], [7,8,9]]",          // complex array
+                "[\"Hello\", 'c']",                     // string and char array
+                "[\"Mixed\", 15, [1,2,3]]",             // complex mixed array
+        };
+
+        int expectedValidArraysCounter = validArrays.length;
+        int validArraysCounter = 0;
+
+        for (String validArray : validArrays) {
+            ArrayToken token = new ArrayToken(validArray);
+
+            System.out.print(!validArray.equals(validArrays[expectedValidArraysCounter - 1])
+                    ? token.toString() + " :: "
+                    : token.toString() + "\n");
+
+            validArraysCounter++;
+        }
+
+        assertEquals(expectedValidArraysCounter, validArraysCounter);
+
+        System.out.println("\n\n" + validArraysCounter + " out of " + expectedValidArraysCounter
+                + " string literals were correctly initialized!");
+        System.out.println(TESTS_SEPARATOR);
+    }
 }
 
 

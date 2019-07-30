@@ -1,11 +1,11 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAccessLabelException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidAccessLabelException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongAccessLabelException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidAccessLabelException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyFunctionality.Pair;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents an access label with index token in H-Language assembly instructions
@@ -13,7 +13,7 @@ import Assembly.Preprocessor;
  * @format ACCESS_SEPARATOR_OPEN name literal ACCESS_SEPARATOR_CLOSE INDEX_SEPARATOR OPEN index expression INDEX_SEPARATOR_CLOSE
  * @see AssemblyConstants for the valid access separators
  * @see AssemblyFunctions for the implementation details
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO link to all instruction classes that use an access label token
  */
 public class AccessLabelWithIndexToken extends Token<Pair<AccessLabelToken, IntegerExpressionToken>> {

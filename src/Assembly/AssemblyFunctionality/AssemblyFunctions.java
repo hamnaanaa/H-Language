@@ -4,11 +4,11 @@ import Assembly.AssemblyConstants.AssemblyConstants;
 import Assembly.AssemblyConstants.Operators;
 import Assembly.AssemblyConstants.Alphabets;
 import Assembly.AssemblyExceptions.FunctionalExceptions.*;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidAccessLabelException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidExpressionException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongEntryLabelException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidOperatorException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.PreproccessorException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.*;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidAccessLabelException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidExpressionException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidOperatorException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.ParserException;
 import Assembly.AssemblyTokens.*;
 
 import javax.script.ScriptEngine;
@@ -456,7 +456,7 @@ class Tokenizer {
                         }
             }
             // unified exception
-        } catch (PreproccessorException e) {
+        } catch (ParserException e) {
             throw new WrongAssemblyLineException("\nError in token '" + rawToken + "' occurred:"
                     + e.getMessage());
         }

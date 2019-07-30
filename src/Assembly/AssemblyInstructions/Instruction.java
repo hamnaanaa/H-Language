@@ -5,12 +5,10 @@ import Assembly.AssemblyTokens.Token;
 /***
  * Abstract class that represents instructions in H-Language assembly consisting of tokens
  */
-// TODO : abstract class + docs
+// TODO : javadoc
 // TODO : interface (Binary)Instruction with all possible classes for the visitor pattern (don't forget reflection)
 public abstract class Instruction {
-    private Token[] tokens;
+    protected Token[] tokens;
 
-    public Instruction(Token[] tokens) {
-        this.tokens = tokens;
-    }
+    protected abstract Token[] parse(Token[] tokens);
 }

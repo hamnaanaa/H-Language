@@ -1,6 +1,6 @@
 package Assembly.AssemblyConstants;
 
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 import Assembly.CodeFormatter;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyTokens.RegistryAccessToken;
@@ -45,14 +45,14 @@ public class AssemblyConstants {
 
     /**
      * Section separators
-     * @see Preprocessor
+     * @see InstructionParser
      */
     public static final String SECTION_SEPARATOR = "..";
     public static final String INCLUDE_SEPARATOR = "$$";
 
     /**
      * Flags for different sections
-     * @see Preprocessor
+     * @see InstructionParser
      */
     public static final int INCLUDE_FLAG = 0;
     public static final String INCLUDE_HEADER = INCLUDE_SEPARATOR + " " + "include:";
@@ -106,7 +106,7 @@ public class AssemblyConstants {
 
     /**
      * Special separators for each Assembly instruction
-     * @see Preprocessor
+     * @see InstructionParser
      */
     public static final String INCLUDE_STATEMENT_SEPARATOR = "::";
     public static final String ENTRY_LABEL_SEPARATOR_OPEN = "%%";

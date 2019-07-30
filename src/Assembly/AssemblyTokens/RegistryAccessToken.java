@@ -1,14 +1,14 @@
 package Assembly.AssemblyTokens;
 
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongExpressionException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongRegistryIndexException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongRegistryNameException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidExpressionException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidRegistryAccessException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongExpressionException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongRegistryIndexException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongRegistryNameException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidExpressionException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidRegistryAccessException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyConstants.AssemblyConstants;
 import Assembly.AssemblyFunctionality.Pair;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 import java.util.Arrays;
 
@@ -19,7 +19,7 @@ import java.util.Arrays;
  * @see AssemblyFunctions for the implementation details
  * @see AssemblyConstants for the list of valid registry names and indices
  * @see // TODO : link to all instruction-classes that use registry access token
- * @see Preprocessor
+ * @see InstructionParser
  */
 public class RegistryAccessToken extends Token<Pair<String, Integer>> {
 

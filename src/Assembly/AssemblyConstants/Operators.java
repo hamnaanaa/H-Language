@@ -1,8 +1,6 @@
 package Assembly.AssemblyConstants;
 
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongOperatorNameException;
-
-import java.util.stream.Stream;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongOperatorNameException;
 
 import static Assembly.AssemblyConstants.AssemblyConstants.*;
 
@@ -10,74 +8,74 @@ public enum Operators {
     /**
      * NOP-Operators
      */
-    NOP("nop", TEXT_FLAG),
-    IFETCH("ifetch", TEXT_FLAG),
+    NOP("nop", 0, TEXT_FLAG),
+    IFETCH("ifetch", 0, TEXT_FLAG),
 
     /**
      * REGISTRY-Operands
      */
-    MOV("mov", TEXT_FLAG),
-    XCHG("xchg", TEXT_FLAG),
+    MOV("mov", 2, TEXT_FLAG),
+    XCHG("xchg", 2, TEXT_FLAG),
 
     /**
      * OUTPUT-Operators
      */
-    NEWLINE("newline", TEXT_FLAG),
-    PRINT("print", TEXT_FLAG),
-    PRINTSTR("printstr", TEXT_FLAG),
+    NEWLINE("newline", 0, TEXT_FLAG),
+    PRINT("print", 1, TEXT_FLAG),
+    PRINTSTR("printstr", 1, TEXT_FLAG),
 
     /**
      * STACK-Operators
      */
-    PUSH("push", TEXT_FLAG),
-    POP("pop", TEXT_FLAG),
+    PUSH("push", 1, TEXT_FLAG),
+    POP("pop", 1, TEXT_FLAG),
 
     /**
      * ARITHMETIC-Operators
      */
-    INC("inc", TEXT_FLAG),
-    ADD("add", TEXT_FLAG),
-    MUL("mul", TEXT_FLAG),
-    SUBR("subr", TEXT_FLAG),
-    SUBL("subl", TEXT_FLAG),
-    DIVR("divr", TEXT_FLAG),
-    DIVL("divl", TEXT_FLAG),
-    SAR("sar", TEXT_FLAG),
+    INC("inc", 1, TEXT_FLAG),
+    ADD("add", 2, TEXT_FLAG),
+    MUL("mul", 2, TEXT_FLAG),
+    SUBR("subr", 2, TEXT_FLAG),
+    SUBL("subl", 2, TEXT_FLAG),
+    DIVR("divr", 2, TEXT_FLAG),
+    DIVL("divl", 2, TEXT_FLAG),
+    SAR("sar", 2, TEXT_FLAG),
 
     /**
      * LOGIC-Operators
      */
-    NOT("not", TEXT_FLAG),
-    AND("and", TEXT_FLAG),
-    OR("or", TEXT_FLAG),
-    XOR("xor", TEXT_FLAG),
-    CMP("cmp", TEXT_FLAG),
+    NOT("not", 1, TEXT_FLAG),
+    AND("and", 2, TEXT_FLAG),
+    OR("or", 2, TEXT_FLAG),
+    XOR("xor", 2, TEXT_FLAG),
+    CMP("cmp", 2, TEXT_FLAG),
 
     /**
      * CALL-operator
      */
-    CALL("call", TEXT_FLAG),
+    CALL("call", 1, TEXT_FLAG),
 
     /**
      * JUMP-Operators
      */
-    JMP("jmp", TEXT_FLAG),
-    JZ("jz", TEXT_FLAG),
-    JE("je", TEXT_FLAG),
-    JNZ("jnz", TEXT_FLAG),
-    JNE("jne", TEXT_FLAG),
-    JOVF("jovf", TEXT_FLAG),
-    JLE("jle", TEXT_FLAG),
-    JNG("jng", TEXT_FLAG),
-    JL("jl", TEXT_FLAG),
-    JNGE("jnge", TEXT_FLAG),
+    JMP("jmp", 1, TEXT_FLAG),
+    JZ("jz", 1, TEXT_FLAG),
+    JE("je", 1, TEXT_FLAG),
+    JNZ("jnz", 1, TEXT_FLAG),
+    JNE("jne", 1, TEXT_FLAG),
+    JOVF("jovf", 1, TEXT_FLAG),
+    JLE("jle", 1, TEXT_FLAG),
+    JNG("jng", 1, TEXT_FLAG),
+    JL("jl", 1, TEXT_FLAG),
+    JNGE("jnge", 1, TEXT_FLAG),
 
     /**
      * SECTION-Operators
      */
-    EQU("equ", VAR_FLAG),
-    DEF("def", DATA_FLAG),
-    RES("res", BSS_FLAG);
+    EQU("equ", 2, VAR_FLAG),
+    DEF("def", 2, DATA_FLAG),
+    RES("res", 2, BSS_FLAG);
 
     // TODO : new Operators
     //      MOD("mod", TEXT_FLAG)
@@ -85,11 +83,21 @@ public enum Operators {
 
 
     private String operatorMEMO;
+    private int arity;
     private int sectionFlag;
 
-    Operators(String operatorMEMO, int sectionFlag) {
+    public int getArity() {
+        return arity;
+    }
+
+    Operators(String operatorMEMO, int arity, int sectionFlag) {
         this.operatorMEMO = operatorMEMO;
+        this.arity = arity;
         this.sectionFlag = sectionFlag;
+    }
+
+    public boolean equals(Operators operator) {
+        return operator != null && this.operatorMEMO.equals(operator.operatorMEMO);
     }
 
     @Override

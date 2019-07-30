@@ -1,7 +1,7 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongExpressionException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongExpressionException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 
 /**

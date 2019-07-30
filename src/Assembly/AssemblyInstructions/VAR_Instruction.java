@@ -6,8 +6,10 @@ import Assembly.AssemblyTokens.Token;
  * Abstract class that represents instructions of the VARIABLES-Section
  */
 // TODO : VAR Instruction
-public abstract class VAR_Instruction extends Instruction {
-    public VAR_Instruction(Token[] tokens) {
-        super(tokens);
+public class VAR_Instruction extends Instruction {
+
+    @Override
+    protected Token[] parse(Token[] tokens) {
+        return new Token[0];
     }
 }

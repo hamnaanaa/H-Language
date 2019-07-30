@@ -1,10 +1,10 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongStringLiteralException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidStringLiteralException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongStringLiteralException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidStringLiteralException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents a string literal token in H-Language assembly instructions
@@ -12,7 +12,7 @@ import Assembly.Preprocessor;
  * @format [CHAR/STRING]_SEPARATOR string literal [CHAR/STRING]_SEPARATOR
  * @see AssemblyConstants for the valid string and char separators
  * @see AssemblyFunctions for the implementation details
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO link to all instruction classes that use a string literal token
  */
 public class StringLiteralToken extends Token<String> {
@@ -52,5 +52,10 @@ public class StringLiteralToken extends Token<String> {
             throw new WrongStringLiteralException("\nNull-pointer string found");
 
         return AssemblyFunctions.formatStringLiteral(stringLiteral);
+    }
+
+    @Override
+    public String toString() {
+        return "\"" + super.toString() + "\"";
     }
 }

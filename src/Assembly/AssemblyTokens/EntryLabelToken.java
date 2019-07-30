@@ -1,10 +1,10 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongEntryLabelException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidEntryLabelException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongEntryLabelException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidEntryLabelException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents an entry label token in H-Language assembly instructions
@@ -12,7 +12,7 @@ import Assembly.Preprocessor;
  * @format ENTRY_SEPARATOR OPEN SPACE name literal ENTRY_SEPARATOR_CLOSE
  * @see AssemblyConstants for the valid entry label separators
  * @see AssemblyFunctions for the implementation details
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO link to all instruction classes that use an entry label token
  */
 public class EntryLabelToken extends Token<NameLiteralToken> {

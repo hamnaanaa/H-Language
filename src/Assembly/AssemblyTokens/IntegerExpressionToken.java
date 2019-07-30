@@ -2,10 +2,10 @@ package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
 import Assembly.AssemblyExceptions.FunctionalExceptions.NonImplementedFunctionalityException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidExpressionException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongExpressionException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidExpressionException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongExpressionException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents an integer expression token in H-Language assembly instructions
@@ -13,7 +13,7 @@ import Assembly.Preprocessor;
  * @format expression
  * @see AssemblyConstants for the valid interval for integer values
  * @see AssemblyFunctions for the implementation details of the expression evaluation
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO : link to all instruction classes that use an integer expression
  */
 public class IntegerExpressionToken extends ExpressionToken<Integer> {

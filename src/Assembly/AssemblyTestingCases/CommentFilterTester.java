@@ -1,8 +1,6 @@
-package Assembly.AssemblyTestingCases;
-
 import static org.junit.Assert.*;
 
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAssemblyLineException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongCommentFormatException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongFilePathException;
 import Assembly.CodeFormatter;

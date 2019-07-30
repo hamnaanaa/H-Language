@@ -1,4 +1,4 @@
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongAssemblyLineException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyTokens.Token;
 import Assembly.CodeFormatter;
@@ -179,7 +179,7 @@ public class TokenizerTester {
                     System.out.println("- CLASS: " + className.substring(className.lastIndexOf('.')) + " < " + token + " >");
                 }
                 System.out.println();
-            } catch (RuntimeException e) {
+            } catch (WrongAssemblyLineException e) {
                 builder.append("\nException happened in line '").append(line).append("'").append(e.getMessage()).append("\n");
             }
         }

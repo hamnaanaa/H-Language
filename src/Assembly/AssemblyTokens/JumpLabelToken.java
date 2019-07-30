@@ -1,10 +1,10 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidJumpLabelException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongJumpLabelException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidJumpLabelException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongJumpLabelException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents a label token in H-Language assembly instructions
@@ -12,7 +12,7 @@ import Assembly.Preprocessor;
  * @format LABEL_SEPARATOR_OPEN name token LABEL_SEPARATOR_CLOSE
  * @see AssemblyConstants for the valid access separators
  * @see AssemblyFunctions for the implementation details
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO link to all instruction classes that use a label token
  */
 public class JumpLabelToken extends Token<NameLiteralToken> {

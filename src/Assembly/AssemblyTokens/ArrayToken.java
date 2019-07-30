@@ -1,10 +1,10 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongArrayException;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidArrayException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongArrayException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidArrayException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents an array token in H-Language assembly instructions
@@ -12,7 +12,7 @@ import Assembly.Preprocessor;
  * @format ARRAY_SEPARATOR_OPEN (arrayValue OPERATOR_SEPARATOR)* ARRAY_SEPARATOR_CLOSE
  * @see AssemblyConstants for the valid array and operator separators
  * @see AssemblyFunctions for the implementatiton details
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO link to all instruction classes that use an array token
  */
 public class ArrayToken extends Token<Token<?>[]> {
@@ -64,7 +64,8 @@ public class ArrayToken extends Token<Token<?>[]> {
         for (Token<?> token : value)
             outputBuilder.append(token.toString()).append(AssemblyConstants.OPERATOR_SEPARATOR).append(' ');
 
-        outputBuilder.setLength(outputBuilder.length() - 2);
+        if (outputBuilder.length() > 2)
+            outputBuilder.setLength(outputBuilder.length() - 2);
         return outputBuilder.append(' ').append(AssemblyConstants.ARRAY_SEPARATOR_CLOSE).toString();
     }
 }

@@ -1,10 +1,10 @@
 package Assembly.AssemblyTokens;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidNameLiteralException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongNameLiteralException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidNameLiteralException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongNameLiteralException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 
 /**
  * Class that represents a name literal token in H-Language assembly instructions
@@ -12,7 +12,7 @@ import Assembly.Preprocessor;
  * @format nameLiteral
  * @see AssemblyFunctions for the implementation details
  * @see AssemblyConstants for the valid alphabets to use
- * @see Preprocessor
+ * @see InstructionParser
  * @see // TODO link to the variableAssignment/Label classes (and all other instruction classes that use nameLiteral
  */
 public class NameLiteralToken extends Token<String> {

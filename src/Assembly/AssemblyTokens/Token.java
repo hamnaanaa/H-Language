@@ -15,4 +15,9 @@ public abstract class Token<T> {
     public String toString() {
         return value.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Token && this.value.equals(((Token) obj).value);
+    }
 }

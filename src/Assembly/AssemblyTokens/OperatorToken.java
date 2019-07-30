@@ -1,10 +1,10 @@
 package Assembly.AssemblyTokens;
 
-import Assembly.AssemblyExceptions.PreprocessorExceptions.NonValidOperatorException;
-import Assembly.AssemblyExceptions.FunctionalExceptions.WrongOperatorNameException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidOperatorException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongOperatorNameException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyConstants.Operators;
-import Assembly.Preprocessor;
+import Assembly.InstructionParser;
 import Assembly.AssemblyInstructions.TEXT_Instruction;
 
 /**
@@ -14,7 +14,7 @@ import Assembly.AssemblyInstructions.TEXT_Instruction;
  * @see AssemblyFunctions for the implementation details
  * @see Operators for the list of valid operators
  * @see TEXT_Instruction for all instructions that use operator token
- * @see Preprocessor
+ * @see InstructionParser
  */
 public class OperatorToken extends Token<Operators> {
     public Operators getOP() {
