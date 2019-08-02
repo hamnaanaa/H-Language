@@ -1,4 +1,5 @@
 import Assembly.AssemblyConstants.AssemblyConstants;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongAssemblyLineException;
 import Assembly.AssemblyExceptions.InstructionParserExceptions.*;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
 import Assembly.AssemblyTokens.*;
@@ -982,13 +983,16 @@ public class TokensTester {
         System.out.println(TESTS_SEPARATOR);
     }
 
-    // TODO : javadoc
+    /**
+     * Method to test the initialization of a valid array token
+     */
     @Test
     public void arrayTokenTest_1() {
         System.out.println("\n## VALID_ARRAY_TEST:");
 
         String[] validArrays = new String[]{
                 "[]",                                   // empty array
+                "[ ]",                                  // empty array with whitespace
                 "[1]",                                  // single value
                 "[0, 1, 2, 3, 4, 5]",                   // normal numbers
                 "[-5, -4, -3, -2, -1]",                 // negative numbers
@@ -1001,6 +1005,7 @@ public class TokensTester {
                 "[[1,2,3], [4,5,6], [7,8,9]]",          // complex array
                 "[\"Hello\", 'c']",                     // string and char array
                 "[\"Mixed\", 15, [1,2,3]]",             // complex mixed array
+                "[one, two, three]"                     // varable labels
         };
 
         int expectedValidArraysCounter = validArrays.length;
@@ -1020,6 +1025,48 @@ public class TokensTester {
 
         System.out.println("\n\n" + validArraysCounter + " out of " + expectedValidArraysCounter
                 + " string literals were correctly initialized!");
+        System.out.println(TESTS_SEPARATOR);
+    }
+
+    /**
+     * Method to test the initialization of an invalid array token
+     */
+    @Test
+    public void arrayTokenTest_2() {
+        System.out.println("\n## ARRAY_EXCEPTIONS_TEST:");
+
+        String[] nonValidArrays = new String[]{
+                null,
+                "",
+                " ",
+                "[",
+                "]",
+                "[<array>]",                    // accessLabelToken
+                "[<array>[1]]",                 // accessLabelWithIndexToken
+                "[%% label:]",                  // entryLabelToken
+                "[%label:]",                    // jumpLabelToken
+                "[mov]",                        // operatorToken
+                "[a:5]",                        // registryAccessToken
+                "[[15, 23], 22, [mov, %jmp:]]", // complex array with operator and jumpLabel tokens
+                "[1 2 3]",                      // forgotten commas // TODO : this array is checked as a normal 3 digit number
+        };
+
+        int expectedExceptionsCounter = nonValidArrays.length;
+        int exceptionsCounter = 0;
+
+        for (String nonValidArray : nonValidArrays) {
+            try {
+                new ArrayToken(nonValidArray);
+            } catch (NonValidArrayException | WrongAssemblyLineException e) {
+                System.out.println(e.getMessage());
+                exceptionsCounter++;
+            }
+        }
+
+        assertEquals(expectedExceptionsCounter, exceptionsCounter);
+
+        System.out.println("\n\n" + exceptionsCounter + " out of " + expectedExceptionsCounter
+        + " exceptions were caught!");
         System.out.println(TESTS_SEPARATOR);
     }
 }

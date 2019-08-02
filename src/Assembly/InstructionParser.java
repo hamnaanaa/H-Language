@@ -1,6 +1,8 @@
 package Assembly;
 
 import Assembly.AssemblyConstants.AssemblyConstants;
+import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.WrongAssemblyLineException;
+import Assembly.AssemblyExceptions.FunctionalExceptions.NonValidAssemblyInstructionException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.UndefinedSectionException;
 import Assembly.AssemblyExceptions.FunctionalExceptions.WrongFilePathException;
 import Assembly.AssemblyFunctionality.AssemblyFunctions;
@@ -23,9 +25,13 @@ public class InstructionParser {
 
     private Map<EntryLabelToken, Instruction> entryLabelToInstructionMap;
 
-    // TODO : javadoc (method checks for unique keys)
-    private void addEntryLabelToInstructionMap(EntryLabelToken entryLabel) {
+    // TODO : javadoc (method checks for unique keys and adds to the map if everything is fine)
+    private void addEntryLabelToInstructionMap(EntryLabelToken entryLabel, TEXT_Instruction instruction) {
+        for (Map.Entry<EntryLabelToken, Instruction> entry : entryLabelToInstructionMap.entrySet())
+            if (entry.getKey().equals(entryLabel))
+                throw new NonValidAssemblyInstructionException("\n'" + entryLabel + "' was already defined!");
 
+        entryLabelToInstructionMap.put(entryLabel, instruction);
     }
 
     public InstructionParser(String filePath) throws IOException {
@@ -36,6 +42,8 @@ public class InstructionParser {
         this.instructions = new ArrayList<>();
         this.entryLabelToInstructionMap = new HashMap<>();
         this.stateFlag = -1;
+
+        precompile();
     }
 
     private void precompile() throws UndefinedSectionException {
@@ -117,7 +125,14 @@ public class InstructionParser {
     }
 
     // TODO : notify that there is a special token and save it
-    public void notify(EntryLabelToken entryLabelToken, Instruction container) {
+    public void notify(EntryLabelToken entryLabelToken, TEXT_Instruction container) {
         entryLabelToInstructionMap.put(entryLabelToken, container);
+    }
+
+    public static void main(String[] args) throws IOException {
+        String path = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
+        InstructionParser ip = new InstructionParser(path);
+        for (Instruction instruction : ip.instructions)
+            System.out.println(instruction);
     }
 }

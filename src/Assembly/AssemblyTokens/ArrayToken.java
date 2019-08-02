@@ -15,7 +15,7 @@ import Assembly.InstructionParser;
  * @see InstructionParser
  * @see // TODO link to all instruction classes that use an array token
  */
-public class ArrayToken extends Token<Token<?>[]> {
+public class ArrayToken extends Token<Token<?>[]> implements Arrayable {
 
     /**
      * Constructor for an array token

@@ -15,7 +15,7 @@ import Assembly.InstructionParser;
  * @see InstructionParser
  * @see // TODO link to all instruction classes that use a string literal token
  */
-public class StringLiteralToken extends Token<String> {
+public class StringLiteralToken extends Token<String> implements Arrayable {
     public String getString() {
         return value;
     }

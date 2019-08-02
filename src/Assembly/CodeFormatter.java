@@ -223,11 +223,4 @@ public class CodeFormatter {
                 ? lineWithoutWhitespace.append(buffer).toString().trim()
                 : lineWithoutWhitespace.toString().trim();
     }
-
-    public static void main(String[] args) throws IOException {
-        String path = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
-        CodeFormatter cf = new CodeFormatter(path);
-        for (String line : cf.formattedCode)
-            System.out.println(line);
-    }
 }

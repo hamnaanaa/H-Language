@@ -16,6 +16,11 @@ public abstract class Token<T> {
         return value.toString();
     }
 
+    public String getTokenName() {
+        String className = this.getClass().toString();
+        return className.substring(className.lastIndexOf(".") + 1);
+    }
+
     @Override
     public boolean equals(Object obj) {
         return obj instanceof Token && this.value.equals(((Token) obj).value);

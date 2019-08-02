@@ -9,7 +9,7 @@ import Assembly.AssemblyFunctionality.AssemblyFunctions;
  *
  * @param <T> any subclass of Number can be an expression
  */
-public abstract class ExpressionToken<T extends Number> extends Token<T> {
+public abstract class ExpressionToken<T extends Number> extends Token<T> implements Arrayable {
     /**
      * Method to determine whether the given expression can be evaluated
      *

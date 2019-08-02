@@ -21,11 +21,12 @@ public class TEXT_Instruction extends Instruction {
 
     // TODO : reflection for each arity
     public TEXT_Instruction(Token[] tokens, InstructionParser parser) {
-        this.tokens = parse(tokens);
-
         if (parser == null)
             throw new ParserException("Null-pointer parser found");
         this.parser = parser;
+
+        this.tokens = parse(tokens);
+
     }
 
     @Override
@@ -42,23 +43,26 @@ public class TEXT_Instruction extends Instruction {
 
             switch (tokensNum) {
                 case 1:
-                    specificParseMethod = this.getClass().getMethod("parse",
+                    specificParseMethod = this.getClass().getDeclaredMethod("parse",
                             tokens[0].getClass());
+                    specificParseMethod.setAccessible(true);
                     if ((boolean) specificParseMethod.invoke(this, tokens[0]))
                         return tokens;
                 case 2:
-                    specificParseMethod = this.getClass().getMethod("parse",
+                    specificParseMethod = this.getClass().getDeclaredMethod("parse",
                             tokens[0].getClass(), tokens[1].getClass());
+                    specificParseMethod.setAccessible(true);
                     if ((boolean) specificParseMethod.invoke(this, tokens[0], tokens[1]))
                         return tokens;
                 case 3:
-                    specificParseMethod = this.getClass().getMethod("parse",
+                    specificParseMethod = this.getClass().getDeclaredMethod("parse",
                             tokens[0].getClass(), tokens[1].getClass(), tokens[2].getClass());
+                    specificParseMethod.setAccessible(true);
                     if ((boolean) specificParseMethod.invoke(this, tokens[0], tokens[1], tokens[2]))
                         return tokens;
                 default:
                     throw new UnsupportedOperationException("\nNon-valid instruction found:\n" +
-                            "Wrong function arity: " + tokens.length);
+                            "Non-valid function arity: " + tokens.length);
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             // TODO : change exceptions
@@ -79,7 +83,7 @@ public class TEXT_Instruction extends Instruction {
     }
 
     // TODO : javadoc
-    private boolean parse(EntryLabelToken entryLabelToken) {
+    private boolean parse(Assembly.AssemblyTokens.EntryLabelToken entryLabelToken) {
         parser.notify(entryLabelToken, this);
 
         return true;

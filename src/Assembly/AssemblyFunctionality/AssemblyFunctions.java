@@ -127,10 +127,27 @@ public class AssemblyFunctions {
 
         if (array.startsWith(String.valueOf(AssemblyConstants.ARRAY_SEPARATOR_OPEN))
                 && array.endsWith(String.valueOf(AssemblyConstants.ARRAY_SEPARATOR_CLOSE))) {
-            return Tokenizer.tokenize(array.substring(1, array.length() - 1), false);
+            Token<?>[] arrayTokens = Tokenizer.tokenize(array.substring(1, array.length() - 1), false);
+            if (isValidArrayContent(arrayTokens))
+                return arrayTokens;
         }
 
         throw new WrongArrayException("\nThe given array '" + array + "' is not valid: Wrong separators found");
+    }
+
+    /**
+     * Method to determine whether the given array tokens are arrayable (can be array elements)
+     *
+     * @param arrayTokens array tokens to check
+     * @return true if all tokens are arrayable
+     * @throws WrongArrayException if array tokens contains a non-arrayable token
+     */
+    private static boolean isValidArrayContent(Token<?>[] arrayTokens) throws WrongArrayException {
+        for (Token<?> arrayToken : arrayTokens)
+            if (!(arrayToken instanceof Arrayable))
+                throw new WrongArrayException("\nNon-arrayable token found: " + arrayToken.getTokenName());
+
+        return true;
     }
 
     /**
@@ -381,7 +398,7 @@ class Tokenizer {
         Token<?>[] parsedTokens = new Token<?>[rawTokens.length];
         for (int i = 0; i < rawTokens.length; i++) {
             Token<?> parsedToken = parseStringToken(rawTokens[i]);
-            parsedTokens[i] = (parsedToken);
+            parsedTokens[i] = parsedToken;
         }
 
         return parsedTokens;
@@ -566,7 +583,6 @@ class Tokenizer {
                         && !isLabelSeparator && !isJumpLabel;
 
             } else {
-
                 // if was separated, add the existing buffer as a token
                 if (spaceSeparator || character == AssemblyConstants.OPERATOR_SEPARATOR) {
                     if (buffer.length() > 0)

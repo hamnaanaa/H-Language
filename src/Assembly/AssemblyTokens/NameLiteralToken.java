@@ -15,7 +15,7 @@ import Assembly.InstructionParser;
  * @see InstructionParser
  * @see // TODO link to the variableAssignment/Label classes (and all other instruction classes that use nameLiteral
  */
-public class NameLiteralToken extends Token<String> {
+public class NameLiteralToken extends Token<String> implements Arrayable {
 
     public String getNameLiteral() {
         return value;
