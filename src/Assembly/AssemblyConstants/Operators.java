@@ -41,6 +41,9 @@ public enum Operators {
     DIVR("divr", 2, TEXT_FLAG),
     DIVL("divl", 2, TEXT_FLAG),
     SAR("sar", 2, TEXT_FLAG),
+    SHR("shr", 2, TEXT_FLAG),
+    SAL("sal", 2, TEXT_FLAG),
+    SHL("shl", 2, TEXT_FLAG),
 
     /**
      * LOGIC-Operators

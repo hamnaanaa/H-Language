@@ -126,7 +126,7 @@ public class InstructionParser {
 
     // TODO : notify that there is a special token and save it
     public void notify(EntryLabelToken entryLabelToken, TEXT_Instruction container) {
-        entryLabelToInstructionMap.put(entryLabelToken, container);
+        addEntryLabelToInstructionMap(entryLabelToken, container);
     }
 
     public static void main(String[] args) throws IOException {

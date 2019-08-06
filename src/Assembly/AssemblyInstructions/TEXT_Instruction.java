@@ -1,11 +1,10 @@
 package Assembly.AssemblyInstructions;
 
 
+import Assembly.AssemblyConstants.Operators;
 import Assembly.AssemblyExceptions.FunctionalExceptions.NonValidAssemblyInstructionException;
 import Assembly.AssemblyExceptions.InstructionParserExceptions.ParserException;
-import Assembly.AssemblyTokens.EntryLabelToken;
-import Assembly.AssemblyTokens.OperatorToken;
-import Assembly.AssemblyTokens.Token;
+import Assembly.AssemblyTokens.*;
 import Assembly.InstructionParser;
 
 import java.lang.reflect.InvocationTargetException;
@@ -66,12 +65,13 @@ public class TEXT_Instruction extends Instruction {
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             // TODO : change exceptions
-            e.printStackTrace();
+            e.getStackTrace();
         }
 
         throw new UnsupportedOperationException("\nNon-valid instruction found");
     }
 
+    /*                                          BEGIN: ARITY 1 INSTRUCTIONS                                           */
     // TODO ; javadoc
     private boolean parse(OperatorToken operatorToken) {
         if ((operatorToken.getOP().getArity()) == 0)
@@ -83,10 +83,50 @@ public class TEXT_Instruction extends Instruction {
     }
 
     // TODO : javadoc
-    private boolean parse(Assembly.AssemblyTokens.EntryLabelToken entryLabelToken) {
+    private boolean parse(EntryLabelToken entryLabelToken) {
         parser.notify(entryLabelToken, this);
 
         return true;
     }
+    /*                                            END: ARITY 1 INSTRUCTIONS                                           */
 
+    /*                                          BEGIN: ARITY 2 INSTRUCTIONS                                           */
+    // TODO : javadoc
+    private boolean parse(OperatorToken operatorToken, RegistryAccessToken registryAccessToken) {
+        switch (operatorToken.getOP()) {
+            /* PRINT: print the given registry's value on display */
+            case PRINT:
+                /*PUSH: push the given registry's value on stack */
+            case PUSH:
+                /*POP: pop current value from stack into the given registry */
+            case POP:
+                /* INC: increment the given registry's value */
+            case INC:
+                /* NOT: invert the given registry's value */
+            case NOT:
+                /* CALL: call an address specified in the given registry */
+            case CALL:
+                /* JCC: jump to an address specified in the given registry */
+            case JMP:
+            case JZ:
+            case JE:
+            case JNZ:
+            case JNE:
+            case JOVF:
+            case JLE:
+            case JNG:
+            case JL:
+            case JNGE:
+                return true;
+        }
+
+        throw new NonValidAssemblyInstructionException("\nInvalid operator combination found:"
+                + "\n" + operatorToken.getTokenName() + " " + registryAccessToken.getTokenName() + " is not supported by H");
+    }
+
+    private boolean parse(OperatorToken operatorToken, StringLiteralToken stringLiteral) {
+        switch (operatorToken.getOP()) {
+            case
+        }
+    }
 }

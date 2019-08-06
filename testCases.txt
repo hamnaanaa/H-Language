@@ -31,6 +31,17 @@
             -- try to parse as a reserved word
             -- if not possible try as a variable
 
+    -> instructions:
+        - TEXT Instructions:
+            - arity 1:
+                -- 0-Arity operators: NOP, IFETCH, NEWLINE
+                -- entry labels: '%% label:'
+            - arity 2:
+                -- 1-Arity operators:
+
+
+
+
 
 ##  Comments Sections:
     -> '#' single-lined comments
