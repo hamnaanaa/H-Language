@@ -471,6 +471,94 @@ public class TokensTester {
     }
 
     /**
+     * Method to test the initialization of a valid name literal with index token
+     */
+    @Test
+    public void nameLiteralWithIndexTokenTest_1() {
+        System.out.println("\n## VALID_NAME_LITERAL_WITH_INDEX_TEST:");
+
+        String[] validNameLiteralsWithIndex = new String[]{
+                "var[15]",
+                "array[2]",
+                "text[(15 + 3)]",
+                "i_dont_know[2*2]",
+                "hahahhaha[0]"
+        };
+
+        int expectedValidNameLiteralsWithIndexCounter = validNameLiteralsWithIndex.length;
+        int validNameLiteralsWithIndexCounter = 0;
+
+        for (String validNameLiteralWithIndex : validNameLiteralsWithIndex) {
+            NameLiteralWithIndexToken token = new NameLiteralWithIndexToken(validNameLiteralWithIndex);
+
+            System.out.print(!validNameLiteralWithIndex.equals(validNameLiteralsWithIndex[expectedValidNameLiteralsWithIndexCounter - 1])
+                    ? token.toString() + " :: "
+                    : token.toString() + "\n");
+
+            validNameLiteralsWithIndexCounter++;
+        }
+
+        assertEquals(expectedValidNameLiteralsWithIndexCounter, validNameLiteralsWithIndexCounter);
+
+        System.out.println("\n\n" + validNameLiteralsWithIndexCounter + " out of " +
+                expectedValidNameLiteralsWithIndexCounter + " name literals with index were correctly initialized!");
+        System.out.println(TESTS_SEPARATOR);
+    }
+
+    /**
+     * Method to test the initialization of an invalid name literal with index token
+     */
+    @Test
+    public void nameLiteralWithIndexTokenTest_2() {
+        System.out.println("\n## NAME_LITERAL_WITH_INDEX_EXCEPTIONS_TEST:");
+
+        String[] nonValidNameLiteralsWithIndex = new String[]{
+                null,
+                "",
+                ")",
+                "[",
+                "]",
+                "[]",
+                "[[",
+                "[2]",
+                "<",
+                ">",
+                "<>",
+                "<>[",
+                "<>]",
+                "<>[]",
+                "v a[1]",
+                "var[-1]",
+                "var[2*(-1)]",
+                "<var>[5]",
+                "va!r[5]",
+                "var[]",
+                "var[1.3]",
+                "var[1,3]"
+        };
+
+        int expectedExceptionsCounter = nonValidNameLiteralsWithIndex.length;
+        int exceptionsCounter = 0;
+
+        for (String nonValidNameLiteralWithIndex : nonValidNameLiteralsWithIndex) {
+            try {
+                if (nonValidNameLiteralWithIndex != null && nonValidNameLiteralWithIndex.equals("var[1,3]"))
+                    System.out.println("HHH");
+                new NameLiteralWithIndexToken(nonValidNameLiteralWithIndex);
+            } catch (NonValidNameLiteralException e) {
+                System.out.println(e.getMessage());
+                exceptionsCounter++;
+            }
+        }
+
+        assertEquals(expectedExceptionsCounter, exceptionsCounter);
+
+        System.out.println("\n\n" + exceptionsCounter + " out of " + expectedExceptionsCounter
+                + " exceptions were caught!");
+        System.out.println(TESTS_SEPARATOR);
+    }
+
+    /**
      * Method to test the initialization of a valid access label token
      */
     @Test
@@ -548,6 +636,95 @@ public class TokensTester {
         for (String nonValidAccessLabel : nonValidAccessLabels) {
             try {
                 new AccessLabelToken(nonValidAccessLabel);
+            } catch (NonValidAccessLabelException e) {
+                System.out.println(e.getMessage());
+                exceptionsCounter++;
+            }
+        }
+
+        assertEquals(expectedExceptionsCounter, exceptionsCounter);
+
+        System.out.println("\n\n" + exceptionsCounter + " out of " + expectedExceptionsCounter
+                + " exceptions were caught!");
+        System.out.println(TESTS_SEPARATOR);
+    }
+
+    /**
+     * Method to test the initialization of a valid access label with index token
+     */
+    @Test
+    public void accessLabelWithIndexTokenTest_1() {
+        System.out.println("\n## VALID_ACCESS_LABEL_WITH_INDEX_TEST:");
+
+        String[] validAccessLabelsWithIndex = new String[]{
+                "<label>[15]",
+                "<test>[0]",
+                "<label_with_spaces>[(12 + 23)]",
+                "<label>[ (12+23) / 5 ]"
+        };
+
+        int expectedValidAccessLabelsWithIndexCounter = validAccessLabelsWithIndex.length;
+        int validAccessLabelsWithIndexCounter = 0;
+
+        for (String validAccessLabelWithIndex : validAccessLabelsWithIndex) {
+            AccessLabelWithIndexToken token = new AccessLabelWithIndexToken(validAccessLabelWithIndex);
+
+            System.out.print(!validAccessLabelWithIndex
+                    .equals(validAccessLabelsWithIndex[expectedValidAccessLabelsWithIndexCounter - 1])
+                    ? token.toString() + " :: "
+                    : token.toString() + "\n");
+
+            validAccessLabelsWithIndexCounter++;
+        }
+
+        assertEquals(expectedValidAccessLabelsWithIndexCounter, validAccessLabelsWithIndexCounter);
+
+        System.out.println("\n\n" + validAccessLabelsWithIndexCounter + " out of "
+                + expectedValidAccessLabelsWithIndexCounter + " access labels with index were correctly initialized!");
+        System.out.println(TESTS_SEPARATOR);
+    }
+
+    /**
+     * Method to test the initialization of an invalid access label with index token
+     */
+    @Test
+    public void accessLabelWithIndexTokenTest_2() {
+        System.out.println("\n## ACCESS_LABEL_WITH_INDEX_EXCEPTIONS_TEST:");
+
+        String[] nonValidAccessLabelsWithIndex = new String[]{
+                null,
+                "",
+                ")",
+                "[",
+                "]",
+                "[]",
+                "[[",
+                "[2]",
+                "<",
+                ">",
+                "<>",
+                "<>[",
+                "<>]",
+                "<>[]",
+                "<label>[]",
+                "<>[1]",
+                "<label>[1][",
+                "<label>[1]]",
+                "<la[bel>[1]]",
+                "<la[bel>]",
+                "<<label>[1]",
+                "label[1]",
+                "label[1",
+                "<label>[1",
+                "<label>[2-3]"
+        };
+
+        int expectedExceptionsCounter = nonValidAccessLabelsWithIndex.length;
+        int exceptionsCounter = 0;
+
+        for (String nonValidAccessLabelWithIndex : nonValidAccessLabelsWithIndex) {
+            try {
+                new AccessLabelWithIndexToken(nonValidAccessLabelWithIndex);
             } catch (NonValidAccessLabelException e) {
                 System.out.println(e.getMessage());
                 exceptionsCounter++;
@@ -712,95 +889,6 @@ public class TokensTester {
             try {
                 new JumpLabelToken(nonValidJumpLabel);
             } catch (NonValidJumpLabelException e) {
-                System.out.println(e.getMessage());
-                exceptionsCounter++;
-            }
-        }
-
-        assertEquals(expectedExceptionsCounter, exceptionsCounter);
-
-        System.out.println("\n\n" + exceptionsCounter + " out of " + expectedExceptionsCounter
-                + " exceptions were caught!");
-        System.out.println(TESTS_SEPARATOR);
-    }
-
-    /**
-     * Method to test the initialization of a valid access label with index token
-     */
-    @Test
-    public void accessLabelWithIndexTokenTest_1() {
-        System.out.println("\n## VALID_ACCESS_LABEL_WITH_INDEX_TEST:");
-
-        String[] validAccessLabelsWithIndex = new String[]{
-                "<label>[15]",
-                "<test>[0]",
-                "<label_with_spaces>[(12 + 23)]",
-                "<label>[ (12+23) / 5 ]"
-        };
-
-        int expectedValidAccessLabelsWithIndexCounter = validAccessLabelsWithIndex.length;
-        int validAccessLabelsWithIndexCounter = 0;
-
-        for (String validAccessLabelWithIndex : validAccessLabelsWithIndex) {
-            AccessLabelWithIndexToken token = new AccessLabelWithIndexToken(validAccessLabelWithIndex);
-
-            System.out.print(!validAccessLabelWithIndex
-                    .equals(validAccessLabelsWithIndex[expectedValidAccessLabelsWithIndexCounter - 1])
-                    ? token.toString() + " :: "
-                    : token.toString() + "\n");
-
-            validAccessLabelsWithIndexCounter++;
-        }
-
-        assertEquals(expectedValidAccessLabelsWithIndexCounter, validAccessLabelsWithIndexCounter);
-
-        System.out.println("\n\n" + validAccessLabelsWithIndexCounter + " out of "
-                + expectedValidAccessLabelsWithIndexCounter + " access labels with index were correctly initialized!");
-        System.out.println(TESTS_SEPARATOR);
-    }
-
-    /**
-     * Method to test the initialization of an invalid access label with index token
-     */
-    @Test
-    public void accessLabelWithIndexTokenTest_2() {
-        System.out.println("\n## ACCESS_LABEL_WITH_INDEX_EXCEPTIONS_TEST:");
-
-        String[] nonValidAccessLabelsWithIndex = new String[]{
-                null,
-                "",
-                ")",
-                "[",
-                "]",
-                "[]",
-                "[[",
-                "[2]",
-                "<",
-                ">",
-                "<>",
-                "<>[",
-                "<>]",
-                "<>[]",
-                "<label>[]",
-                "<>[1]",
-                "<label>[1][",
-                "<label>[1]]",
-                "<la[bel>[1]]",
-                "<la[bel>]",
-                "<<label>[1]",
-                "label[1]",
-                "label[1",
-                "<label>[1",
-                "<label>[2-3]"
-        };
-
-        int expectedExceptionsCounter = nonValidAccessLabelsWithIndex.length;
-        int exceptionsCounter = 0;
-
-        for (String nonValidAccessLabelWithIndex : nonValidAccessLabelsWithIndex) {
-            try {
-                new AccessLabelWithIndexToken(nonValidAccessLabelWithIndex);
-            } catch (NonValidAccessLabelException e) {
                 System.out.println(e.getMessage());
                 exceptionsCounter++;
             }
@@ -1066,7 +1154,7 @@ public class TokensTester {
         assertEquals(expectedExceptionsCounter, exceptionsCounter);
 
         System.out.println("\n\n" + exceptionsCounter + " out of " + expectedExceptionsCounter
-        + " exceptions were caught!");
+                + " exceptions were caught!");
         System.out.println(TESTS_SEPARATOR);
     }
 }

@@ -5,10 +5,7 @@ import Assembly.AssemblyConstants.Operators;
 import Assembly.AssemblyConstants.Alphabets;
 import Assembly.AssemblyExceptions.FunctionalExceptions.*;
 import Assembly.AssemblyExceptions.FunctionalExceptions.FunctionalTokenExceptions.*;
-import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidAccessLabelException;
-import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidExpressionException;
-import Assembly.AssemblyExceptions.InstructionParserExceptions.NonValidOperatorException;
-import Assembly.AssemblyExceptions.InstructionParserExceptions.ParserException;
+import Assembly.AssemblyExceptions.InstructionParserExceptions.*;
 import Assembly.AssemblyTokens.*;
 
 import javax.script.ScriptEngine;
@@ -218,7 +215,7 @@ public class AssemblyFunctions {
      * @see IntegerExpressionToken for the valid integer expression token
      */
     public static Pair<AccessLabelToken, IntegerExpressionToken> extractAccessLabelWithIndexTokens(String accessLabel)
-            throws NonValidAccessLabelException {
+            throws WrongAccessLabelException {
         String[] tokens = accessLabel.split("(?=\\" + AssemblyConstants.INDEX_SEPARATOR_OPEN + ")");
 
         if (tokens.length != 2)
@@ -237,8 +234,43 @@ public class AssemblyFunctions {
         try {
             String expressionToEvaluate = tokens[1].substring(1, tokens[1].length() - 1);
             return new Pair<>(new AccessLabelToken(tokens[0]), new IntegerExpressionToken(expressionToEvaluate));
-        } catch (NonValidExpressionException e) {
+        } catch (NonValidExpressionException | NonValidAccessLabelException e) {
             throw new WrongAccessLabelException(e.getMessage());
+        }
+    }
+
+    /**
+     * Method to extract a pair of two tokens from a name literal with index
+     *
+     * @param nameLiteral name literal with index to extract name literal and index from
+     * @return pair of name literal token and integer expression token
+     * @throws WrongNameLiteralException if the number of tokens is not valid or tokens are not formatted correctly
+     * @see AssemblyConstants for the valid separators
+     * @see NameLiteralToken for the valid name literal token
+     * @see IntegerExpressionToken for the valid integer expression token
+     */
+    public static Pair<NameLiteralToken, IntegerExpressionToken> extractNameLiteralWithIndexTokens(String nameLiteral)
+            throws WrongNameLiteralException {
+        String[] tokens = nameLiteral.split("(?=\\" + AssemblyConstants.INDEX_SEPARATOR_OPEN + ")");
+
+        if (tokens.length != 2)
+            throw new WrongNameLiteralException("\nName literal with index must consist of two tokens. Tokens found:\n" +
+                    Arrays.toString(tokens));
+
+        if (tokens[1].length() < 2)
+            throw new WrongNameLiteralException("\nWrong name literal index found: '" + tokens[1] + "'");
+        if (!tokens[1].startsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_OPEN)))
+            throw new WrongNameLiteralException("\nName literal index '" + tokens[1] + "' was not opened correctly: "
+                    + "'" + AssemblyConstants.INDEX_SEPARATOR_OPEN + "' is missing at the beginning");
+        if (!tokens[1].endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE)))
+            throw new WrongNameLiteralException("\nName literal index '" + tokens[1] + "' was not closed correctly: "
+                    + "'" + AssemblyConstants.INDEX_SEPARATOR_CLOSE + "' is missing at the end");
+
+        try {
+            String expressionToEvaluate = tokens[1].substring(1, tokens[1].length() - 1);
+            return new Pair<>(new NameLiteralToken(tokens[0]), new IntegerExpressionToken(expressionToEvaluate));
+        } catch (NonValidExpressionException | NonValidNameLiteralException e) {
+            throw new WrongNameLiteralException(e.getMessage());
         }
     }
 

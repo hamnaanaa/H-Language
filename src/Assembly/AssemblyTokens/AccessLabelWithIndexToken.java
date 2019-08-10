@@ -30,7 +30,7 @@ public class AccessLabelWithIndexToken extends Token<Pair<AccessLabelToken, Inte
     public AccessLabelWithIndexToken(String accessLabel) throws NonValidAccessLabelException {
         try {
             this.value = handleAccessLabelWithIndex(accessLabel);
-        } catch (NonValidAccessLabelException e) {
+        } catch (WrongAccessLabelException e) {
             throw new NonValidAccessLabelException("\nNon-valid access label with index found: '" + accessLabel
                     + "'" + e.getMessage());
         }
@@ -38,6 +38,7 @@ public class AccessLabelWithIndexToken extends Token<Pair<AccessLabelToken, Inte
 
     /**
      * Method to determine whether the given access label with index is valid
+     *
      * @param accessLabel access label with index to extract access label token and integer expression token from
      * @return pair of access label token and integer expression token
      * @throws WrongAccessLabelException if non-valid access label with index found

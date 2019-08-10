@@ -68,7 +68,9 @@ public class IntegerExpressionToken extends ExpressionToken<Integer> {
         if (expression == null || expression.equals(""))
             throw new WrongExpressionException("\nNull-pointer integer expression found");
 
-        expression = expression.replaceAll("_", "");
+        expression = expression
+                .replaceAll("_", "")
+                .replaceAll(",", ".");
 
         try {
             int value = AssemblyFunctions.eval(expression);

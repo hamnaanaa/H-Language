@@ -118,15 +118,19 @@ public class TEXT_Instruction extends Instruction {
             case JL:
             case JNGE:
                 return true;
+            default:
+                throw new NonValidAssemblyInstructionException("\nInvalid operator combination found:"
+                        + "\n" + operatorToken.getTokenName() + " " + registryAccessToken.getTokenName() + " is not supported by H");
         }
-
-        throw new NonValidAssemblyInstructionException("\nInvalid operator combination found:"
-                + "\n" + operatorToken.getTokenName() + " " + registryAccessToken.getTokenName() + " is not supported by H");
     }
 
+    // TODO : javadoc
     private boolean parse(OperatorToken operatorToken, StringLiteralToken stringLiteral) {
         switch (operatorToken.getOP()) {
-            case
+
         }
+
+        // TODO
+        return false;
     }
 }
