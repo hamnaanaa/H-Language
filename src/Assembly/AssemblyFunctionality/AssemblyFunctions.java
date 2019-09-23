@@ -476,9 +476,7 @@ class Tokenizer {
 
                 // access label with/without index
                 case AssemblyConstants.ACCESS_SEPARATOR_OPEN:
-                    return rawToken.endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE))
-                            ? new AccessLabelWithIndexToken(rawToken)
-                            : new AccessLabelWithIndexToken.AccessLabelToken(rawToken);
+                    return  new AccessLabelWithIndexToken(rawToken);
 
                 // entry/jump label
                 case AssemblyConstants.JUMP_LABEL_SEPARATOR_OPEN:
@@ -505,7 +503,7 @@ class Tokenizer {
                             return new OperatorToken(rawToken);
                             // name literal (variable)
                         } catch (NonValidOperatorException e) {
-                            return new NameLiteralWithIndexToken.NameLiteralToken(rawToken);
+                            return new NameLiteralWithIndexToken(rawToken);
                         }
             }
             // unified exception
