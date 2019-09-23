@@ -109,7 +109,7 @@ public class TokensTester {
     public void registryAccessTokenTest_1_3() {
         System.out.println("\n## VALID_REGISTRY_ACCESS_TEST:\n(combined)");
 
-        String[] validRegistryAcesses = new String[]{
+        String[] validRegistryAccesses = new String[]{
                 "a:0",
                 "b:0",
                 "a:15",
@@ -120,13 +120,40 @@ public class TokensTester {
                 "b:(15/15)-1"
         };
 
-        int expectedValidRegistryAccessesCounter = validRegistryAcesses.length;
+        int expectedValidRegistryAccessesCounter = validRegistryAccesses.length;
         int validRegistryAccessesCounter = 0;
 
-        for (String validRegistryAccess : validRegistryAcesses) {
-            System.out.print(!validRegistryAccess.equals(validRegistryAcesses[expectedValidRegistryAccessesCounter - 1])
+        for (String validRegistryAccess : validRegistryAccesses) {
+            System.out.print(!validRegistryAccess.equals(validRegistryAccesses[expectedValidRegistryAccessesCounter - 1])
                     ? new RegistryAccessToken(validRegistryAccess).toString() + " :: "
                     : new RegistryAccessToken(validRegistryAccess).toString() + "\n");
+
+            validRegistryAccessesCounter++;
+        }
+
+        assertEquals(expectedValidRegistryAccessesCounter, validRegistryAccessesCounter);
+
+        System.out.println("\n\n" + validRegistryAccessesCounter + " out of " + expectedValidRegistryAccessesCounter
+                + " registry accesses were successfully initialized!");
+        System.out.println(TESTS_SEPARATOR);
+    }
+
+    @Test
+    public void registryAccessTokenTest_1_4() {
+        System.out.println("\n## VALID_REGISTRY_ACCESS_TEST:\n(stack registry)");
+
+        String[] validRegistryAccesses = new String[]{
+                "esp",
+                "ebp"
+        };
+
+        int expectedValidRegistryAccessesCounter = validRegistryAccesses.length;
+        int validRegistryAccessesCounter = 0;
+
+        for (String validRegistryAccess : validRegistryAccesses) {
+            System.out.print(!validRegistryAccess.equals(validRegistryAccesses[expectedValidRegistryAccessesCounter - 1])
+                    ? new RegistryAccessToken(validRegistryAccess).toString() + " :: "
+                    : new RegistryAccessToken(validRegistryAccess).toString() + " \n");
 
             validRegistryAccessesCounter++;
         }
@@ -385,7 +412,7 @@ public class TokensTester {
     /**
      * Method to test the initialization of a valid name literal token
      *
-     * @see NameLiteralToken for the implementation details
+     * @see NameLiteralWithIndexToken.NameLiteralToken for the implementation details
      */
     @Test
     public void nameLiteralTokenTest_1() {
@@ -401,20 +428,20 @@ public class TokensTester {
                 "ha123"
         };
 
-        String expectedOutput = "label\n" +
-                "stringer\n" +
-                "nameliteral\n" +
-                "my_label\n" +
-                "_\n" +
-                "____\n" +
-                "ha123\n";
+        String expectedOutput = "label:0\n" +
+                "stringer:0\n" +
+                "nameliteral:0\n" +
+                "my_label:0\n" +
+                "_:0\n" +
+                "____:0\n" +
+                "ha123:0\n";
         StringBuilder realOutput = new StringBuilder();
 
         int expectedValidNameLiteralsCounter = nameLiterals.length;
         int validNameLiteralsCounter = 0;
 
         for (String nameLiteral : nameLiterals) {
-            NameLiteralToken token = new NameLiteralToken(nameLiteral);
+            NameLiteralWithIndexToken token = new NameLiteralWithIndexToken(nameLiteral);
             realOutput.append(token.toString()).append("\n");
 
             System.out.print(!nameLiteral.equals(nameLiterals[expectedValidNameLiteralsCounter - 1])
@@ -456,7 +483,7 @@ public class TokensTester {
 
         for (String nonValidNameLiteral : nonValidNameLiterals) {
             try {
-                new NameLiteralToken(nonValidNameLiteral);
+                new NameLiteralWithIndexToken(nonValidNameLiteral);
             } catch (NonValidNameLiteralException e) {
                 System.out.println(e.getMessage());
                 exceptionsCounter++;
@@ -573,18 +600,18 @@ public class TokensTester {
                 "<to_ke_ni_ze>"
         };
 
-        String expectedOutput = "pointer\n" +
-                "test\n" +
-                "___\n" +
-                "label_123\n" +
-                "to_ke_ni_ze\n";
+        String expectedOutput = "pointer:0\n" +
+                "test:0\n" +
+                "___:0\n" +
+                "label_123:0\n" +
+                "to_ke_ni_ze:0\n";
         StringBuilder realOutput = new StringBuilder();
 
         int expectedValidAccessLabelsCounter = accessLabels.length;
         int validAccessLabelsCounter = 0;
 
         for (String accessLabel : accessLabels) {
-            AccessLabelToken token = new AccessLabelToken(accessLabel);
+            AccessLabelWithIndexToken token = new AccessLabelWithIndexToken(accessLabel);
             realOutput.append(token.toString()).append("\n");
 
             System.out.print(!accessLabel.equals(accessLabels[expectedValidAccessLabelsCounter - 1])
@@ -635,7 +662,7 @@ public class TokensTester {
 
         for (String nonValidAccessLabel : nonValidAccessLabels) {
             try {
-                new AccessLabelToken(nonValidAccessLabel);
+                new AccessLabelWithIndexToken.AccessLabelToken(nonValidAccessLabel);
             } catch (NonValidAccessLabelException e) {
                 System.out.println(e.getMessage());
                 exceptionsCounter++;

@@ -15,8 +15,8 @@ import Assembly.InstructionParser;
  * @see InstructionParser
  * @see // TODO link to all instruction classes that use an entry label token
  */
-public class EntryLabelToken extends Token<NameLiteralToken> {
-    public NameLiteralToken getEntryLabel() {
+public class EntryLabelToken extends Token<NameLiteralWithIndexToken.NameLiteralToken> {
+    public NameLiteralWithIndexToken.NameLiteralToken getEntryLabel() {
         return value;
     }
 
@@ -47,12 +47,12 @@ public class EntryLabelToken extends Token<NameLiteralToken> {
      * @see AssemblyFunctions for the implementation details
      * @see AssemblyConstants for the valid entry label separators
      */
-    private NameLiteralToken handleEntryLabel(String entryLabel) throws WrongEntryLabelException {
+    private NameLiteralWithIndexToken.NameLiteralToken handleEntryLabel(String entryLabel) throws WrongEntryLabelException {
         if (entryLabel == null || entryLabel.equals(""))
             throw new WrongEntryLabelException("\nNull-pointer entry label found");
 
         if (AssemblyFunctions.isEntryLabel(entryLabel))
-            return new NameLiteralToken(entryLabel.substring(3, entryLabel.length() - 1));
+            return new NameLiteralWithIndexToken.NameLiteralToken(entryLabel.substring(3, entryLabel.length() - 1));
 
         throw new WrongEntryLabelException("\n'" + entryLabel.substring(3, entryLabel.length() - 1)
                 + "' is not a valid entry label");

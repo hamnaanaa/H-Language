@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 public class TokenizerTester {
 
     private static String TESTS_SEPARATOR = separate(100);
-    private static String FILE_PATH = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
+    private static String FILE_PATH = "/home/hamnaanaa/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
 
     @SuppressWarnings("SameParameterValue")
     private static String separate(int i) {

@@ -15,8 +15,8 @@ import Assembly.InstructionParser;
  * @see InstructionParser
  * @see // TODO link to all instruction classes that use a label token
  */
-public class JumpLabelToken extends Token<NameLiteralToken> {
-    public NameLiteralToken getJumpLabel() {
+public class JumpLabelToken extends Token<NameLiteralWithIndexToken.NameLiteralToken> {
+    public NameLiteralWithIndexToken.NameLiteralToken getJumpLabel() {
         return value;
     }
 
@@ -45,12 +45,12 @@ public class JumpLabelToken extends Token<NameLiteralToken> {
      * @return name literal token if the given jump label is valid
      * @throws WrongJumpLabelException if non-valid jump label found
      */
-    private NameLiteralToken handleJumpLabel(String jumpLabel) throws WrongJumpLabelException {
+    private NameLiteralWithIndexToken.NameLiteralToken handleJumpLabel(String jumpLabel) throws WrongJumpLabelException {
         if (jumpLabel == null || jumpLabel.equals(""))
             throw new WrongJumpLabelException("\nNull-pointer label found");
 
         if (AssemblyFunctions.isJumpLabel(jumpLabel))
-            return new NameLiteralToken(jumpLabel.substring(1, jumpLabel.length() - 1));
+            return new NameLiteralWithIndexToken.NameLiteralToken(jumpLabel.substring(1, jumpLabel.length() - 1));
 
         throw new WrongJumpLabelException("\n'" + jumpLabel.substring(1, jumpLabel.length() - 1)
                 + "' is not a valid jump label");

@@ -1,3 +1,77 @@
 { Available tokens:
-	- 
+	- ACCESS_LABEL: 							<var>
+	- ACCESS_LABEL_WITH_INDEX: 	<var>[5]
+	- ARRAY: 										[1, 2, 3, 4, 5]
+	- ENTRY_LABEL: 							%% init:
+	- INTEGER_EXPRESSION:				15
+	- JUMP_LABEL:								%init:
+	- NAME_LITERAL:							var
+	- NAME_LITERAL_WITH_INDEX:	var[5]
+	- OPERATOR:									mov
+	- REGISTRY_ACCESS:					a:5
+	- STRING:										"Hello, World", 'c'
 }
+NOP
+IFETCH
+NEWLINE
+
+MOV <var>, <var>
+MOV <var>, <var>[0]		# check index
+MOV <var>, 42 		
+MOV <var>, var													# check name literal
+MOV <var>, var[0]			# check index				# check name literal
+MOV <var>, a:0
+MOV <var>[0], <var>		# check index
+MOV <var>[0], <var>[0]	# check both indices
+MOV <var>[0], 42				# check index
+MOV <var>[0], var			# check index				# check name literal
+MOV <var>[0], var[0] 		# check both indices		# check name literal
+MOV <var>[0], a:0			# check index
+MOV a:0, <var>
+MOV a:0, <var>[0]			# check index
+MOV a:0, 42
+MOV a:0, var														# check name literal
+MOV a:0, var[0]													# check name literal
+MOV a:0, b:0
+
+XCHG ADD MUL <var>, <var>
+XCHG ADD MUL <var>, <var>[5]		# check index
+XCHG ADD MUL <var>, 42 		
+XCHG ADD MUL <var>, var													# check name literal
+XCHG ADD MUL <var>, var[0]			# check index				# check name literal
+XCHG ADD MUL <var>, a:0
+XCHG ADD MUL <var>[0], <var>		# check index
+XCHG ADD MUL <var>[0], <var>[0]	# check both indices
+XCHG ADD MUL <var>[0], 42			# check index
+XCHG ADD MUL <var>[0], var			# check index				# check name literal
+XCHG ADD MUL <var>[0], var[0] 		# check both indices		# check name literal
+XCHG ADD MUL <var>[0], a:0			# check index
+XCHG ADD MUL a:0, <var>
+XCHG ADD MUL a:0, <var>[0]			# check index
+XCHG ADD MUL a:0, 42
+XCHG ADD MUL a:0, var														# check name literal
+XCHG ADD MUL a:0, var[0]				# check index				# check name literal
+XCHG ADD MUL a:0, b:0
+
+PRINT <var>
+PRINT <var>[0]				# check index
+PRINT 42
+PRINT var															# check name literal
+PRINT var[0]					# check index				# check name literal
+PRINT a:5
+PRINTSTR "Hello, World!"
+
+PUSH <var>
+PUSH <var>[0]					# check index
+PUSH 42
+PUSH var																# check name literal
+PUSH var[0]						# check index				# check name literal
+PUSH a:0
+
+POP <var>
+POP <var>[0]					# check index
+POP a:0
+
+INC <var>
+INC <var>[0]						# check index
+INC a:0

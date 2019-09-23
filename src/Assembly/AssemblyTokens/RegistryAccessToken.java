@@ -93,12 +93,14 @@ public class RegistryAccessToken extends Token<Pair<String, Integer>> {
             throw new NonValidRegistryAccessException("\nNull-pointer registry access found");
 
         String[] tokens = registryAccess.split(String.valueOf(AssemblyConstants.REGISTRY_ACCESS_SEPARATOR));
-        if (tokens.length != 2)
+        if (tokens.length != 2) {
+            if (registryAccess.equals("ebp") || registryAccess.equals("esp"))
+                return new Pair<>(registryAccess, -1);
             throw new NonValidRegistryAccessException("\nRegistry access must consist of two tokens. Tokens found:\n"
                     + Arrays.toString(tokens));
+        }
 
         return new Pair<>(handleRegistryName(tokens[0]), handleRegistryIndex(tokens[1]));
-
     }
 
     /**

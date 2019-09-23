@@ -211,29 +211,31 @@ public class AssemblyFunctions {
      * @return pair of access label token and integer expression token
      * @throws NonValidAccessLabelException if the number of tokens is not valid or tokens are not formatted correctly
      * @see AssemblyConstants for the valid separators
-     * @see AccessLabelToken for the valid access label token
+     * @see AccessLabelWithIndexToken.AccessLabelToken for the valid access label token
      * @see IntegerExpressionToken for the valid integer expression token
      */
-    public static Pair<AccessLabelToken, IntegerExpressionToken> extractAccessLabelWithIndexTokens(String accessLabel)
+    public static Pair<AccessLabelWithIndexToken.AccessLabelToken, IntegerExpressionToken> extractAccessLabelWithIndexTokens(String accessLabel)
             throws WrongAccessLabelException {
         String[] tokens = accessLabel.split("(?=\\" + AssemblyConstants.INDEX_SEPARATOR_OPEN + ")");
 
-        if (tokens.length != 2)
+        if (tokens.length > 2)
             throw new WrongAccessLabelException("\nAccess label with index must consist of two tokens. Tokens found:\n"
                     + Arrays.toString(tokens));
 
-        if (tokens[1].length() < 2)
-            throw new WrongAccessLabelException("\nWrong access label index found: '" + tokens[1] + "'");
-        if (!tokens[1].startsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_OPEN)))
-            throw new WrongAccessLabelException("\nAccess label index '" + tokens[1] + "' was not opened correctly: "
-                    + "'" + AssemblyConstants.INDEX_SEPARATOR_OPEN + "' is missing at the beginning");
-        if (!tokens[1].endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE)))
-            throw new WrongAccessLabelException("\nAccess label index '" + tokens[1] + "' was not closed correctly: "
-                    + "'" + AssemblyConstants.INDEX_SEPARATOR_CLOSE + "' is missing at the end");
+        if (tokens.length == 2) {
+            if (tokens[1].length() < 2)
+                throw new WrongAccessLabelException("\nWrong access label index found: '" + tokens[1] + "'");
+            if (!tokens[1].startsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_OPEN)))
+                throw new WrongAccessLabelException("\nAccess label index '" + tokens[1] + "' was not opened correctly: "
+                        + "'" + AssemblyConstants.INDEX_SEPARATOR_OPEN + "' is missing at the beginning");
+            if (!tokens[1].endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE)))
+                throw new WrongAccessLabelException("\nAccess label index '" + tokens[1] + "' was not closed correctly: "
+                        + "'" + AssemblyConstants.INDEX_SEPARATOR_CLOSE + "' is missing at the end");
+        }
 
         try {
-            String expressionToEvaluate = tokens[1].substring(1, tokens[1].length() - 1);
-            return new Pair<>(new AccessLabelToken(tokens[0]), new IntegerExpressionToken(expressionToEvaluate));
+            String expressionToEvaluate = tokens.length == 2 ? tokens[1].substring(1, tokens[1].length() - 1) : "0";
+            return new Pair<>(new AccessLabelWithIndexToken.AccessLabelToken(tokens[0]), new IntegerExpressionToken(expressionToEvaluate));
         } catch (NonValidExpressionException | NonValidAccessLabelException e) {
             throw new WrongAccessLabelException(e.getMessage());
         }
@@ -246,29 +248,31 @@ public class AssemblyFunctions {
      * @return pair of name literal token and integer expression token
      * @throws WrongNameLiteralException if the number of tokens is not valid or tokens are not formatted correctly
      * @see AssemblyConstants for the valid separators
-     * @see NameLiteralToken for the valid name literal token
+     * @see NameLiteralWithIndexToken.NameLiteralToken for the valid name literal token
      * @see IntegerExpressionToken for the valid integer expression token
      */
-    public static Pair<NameLiteralToken, IntegerExpressionToken> extractNameLiteralWithIndexTokens(String nameLiteral)
+    public static Pair<NameLiteralWithIndexToken.NameLiteralToken, IntegerExpressionToken> extractNameLiteralWithIndexTokens(String nameLiteral)
             throws WrongNameLiteralException {
         String[] tokens = nameLiteral.split("(?=\\" + AssemblyConstants.INDEX_SEPARATOR_OPEN + ")");
 
-        if (tokens.length != 2)
+        if (tokens.length > 2)
             throw new WrongNameLiteralException("\nName literal with index must consist of two tokens. Tokens found:\n" +
                     Arrays.toString(tokens));
 
-        if (tokens[1].length() < 2)
-            throw new WrongNameLiteralException("\nWrong name literal index found: '" + tokens[1] + "'");
-        if (!tokens[1].startsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_OPEN)))
-            throw new WrongNameLiteralException("\nName literal index '" + tokens[1] + "' was not opened correctly: "
-                    + "'" + AssemblyConstants.INDEX_SEPARATOR_OPEN + "' is missing at the beginning");
-        if (!tokens[1].endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE)))
-            throw new WrongNameLiteralException("\nName literal index '" + tokens[1] + "' was not closed correctly: "
-                    + "'" + AssemblyConstants.INDEX_SEPARATOR_CLOSE + "' is missing at the end");
+        if (tokens.length == 2) {
+            if (tokens[1].length() < 2)
+                throw new WrongNameLiteralException("\nWrong name literal index found: '" + tokens[1] + "'");
+            if (!tokens[1].startsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_OPEN)))
+                throw new WrongNameLiteralException("\nName literal index '" + tokens[1] + "' was not opened correctly: "
+                        + "'" + AssemblyConstants.INDEX_SEPARATOR_OPEN + "' is missing at the beginning");
+            if (!tokens[1].endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE)))
+                throw new WrongNameLiteralException("\nName literal index '" + tokens[1] + "' was not closed correctly: "
+                        + "'" + AssemblyConstants.INDEX_SEPARATOR_CLOSE + "' is missing at the end");
+        }
 
         try {
-            String expressionToEvaluate = tokens[1].substring(1, tokens[1].length() - 1);
-            return new Pair<>(new NameLiteralToken(tokens[0]), new IntegerExpressionToken(expressionToEvaluate));
+            String expressionToEvaluate = tokens.length == 2 ? tokens[1].substring(1, tokens[1].length() - 1) : "0";
+            return new Pair<>(new NameLiteralWithIndexToken.NameLiteralToken(tokens[0]), new IntegerExpressionToken(expressionToEvaluate));
         } catch (NonValidExpressionException | NonValidNameLiteralException e) {
             throw new WrongNameLiteralException(e.getMessage());
         }
@@ -474,7 +478,7 @@ class Tokenizer {
                 case AssemblyConstants.ACCESS_SEPARATOR_OPEN:
                     return rawToken.endsWith(String.valueOf(AssemblyConstants.INDEX_SEPARATOR_CLOSE))
                             ? new AccessLabelWithIndexToken(rawToken)
-                            : new AccessLabelToken(rawToken);
+                            : new AccessLabelWithIndexToken.AccessLabelToken(rawToken);
 
                 // entry/jump label
                 case AssemblyConstants.JUMP_LABEL_SEPARATOR_OPEN:
@@ -501,7 +505,7 @@ class Tokenizer {
                             return new OperatorToken(rawToken);
                             // name literal (variable)
                         } catch (NonValidOperatorException e) {
-                            return new NameLiteralToken(rawToken);
+                            return new NameLiteralWithIndexToken.NameLiteralToken(rawToken);
                         }
             }
             // unified exception

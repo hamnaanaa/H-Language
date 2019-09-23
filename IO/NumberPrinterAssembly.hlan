@@ -17,7 +17,7 @@ $$ include:
 .. bss:
 <overhead> RES 13
 <reserver> RES 5
-	
+
 .. data:
 <array> DEF [15, 14, 13, 12, 11]
 <complex_array> DEF [(15 + 0x13), "Hello World!", [15, 13, 12, 11], 12]

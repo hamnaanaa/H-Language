@@ -16,7 +16,7 @@ import Assembly.InstructionParser;
  * @see InstructionParser
  * @see // TODO link to all instruction classes that use an access label token
  */
-public class AccessLabelWithIndexToken extends Token<Pair<AccessLabelToken, IntegerExpressionToken>> {
+public class AccessLabelWithIndexToken extends Token<Pair<AccessLabelWithIndexToken.AccessLabelToken, IntegerExpressionToken>> {
 
     /**
      * Constructor for an access label with index token
@@ -59,5 +59,58 @@ public class AccessLabelWithIndexToken extends Token<Pair<AccessLabelToken, Inte
                     "Index found: '" + pair.getValue().getExpressionValue() + "'");
 
         return pair;
+    }
+
+    /**
+     * Class that represents an access label token in H-Language assembly instructions
+     *
+     * @format ACCESS_SEPARATOR_OPEN name literal ACCESS_SEPARATOR_CLOSE
+     * @see AssemblyConstants for the valid access separators
+     * @see AssemblyFunctions for the implementation details
+     * @see InstructionParser
+     * @see // TODO link to all instruction classes that use an access label token
+     */
+    public static class AccessLabelToken extends Token<NameLiteralWithIndexToken.NameLiteralToken> {
+        public String getAccessLabel() {
+            return value.getNameLiteral();
+        }
+
+        /**
+         * Constructor for an access label token
+         * Checks whether the given access label is valid
+         *
+         * @param accessLabel access label to check
+         * @throws NonValidAccessLabelException if the given access label is not valid
+         * @see AssemblyFunctions for the implementation details
+         * @see AssemblyConstants for the valid access separators
+         */
+        public AccessLabelToken(String accessLabel) throws NonValidAccessLabelException {
+            try {
+                this.value = handleAccessLabel(accessLabel);
+            } catch (WrongAccessLabelException e) {
+                throw new NonValidAccessLabelException("\nNon-valid access label found: '" + accessLabel + "'"
+                        + e.getMessage());
+            }
+        }
+
+        /**
+         * Method to determine whether the given access label is valid
+         *
+         * @param accessLabel access label to check
+         * @return name literal token if valid access label given
+         * @throws WrongAccessLabelException if non-valid access label found
+         * @see AssemblyFunctions for the implementation details
+         * @see AssemblyConstants for the valid access separators
+         */
+        private NameLiteralWithIndexToken.NameLiteralToken handleAccessLabel(String accessLabel) throws WrongAccessLabelException {
+            if (accessLabel == null || accessLabel.equals(""))
+                throw new WrongAccessLabelException("\nNull-pointer access label found");
+
+            if (AssemblyFunctions.isAccessLabel(accessLabel))
+                return new NameLiteralWithIndexToken.NameLiteralToken(accessLabel.substring(1, accessLabel.length() - 1));
+
+            throw new WrongAccessLabelException("\n'" + accessLabel.substring(1, accessLabel.length() - 1)
+                    + "' is not a valid access label");
+        }
     }
 }
