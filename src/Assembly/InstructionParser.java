@@ -25,11 +25,16 @@ public class InstructionParser {
 
     private Map<EntryLabelToken, Instruction> entryLabelToInstructionMap;
 
+    public List<Instruction> getInstructions() {
+        return instructions;
+    }
+
     // TODO : javadoc (method checks for unique keys and adds to the map if everything is fine)
-    private void addEntryLabelToInstructionMap(EntryLabelToken entryLabel, TEXT_Instruction instruction) {
+    private void addEntryLabelToInstructionMap(EntryLabelToken entryLabel, TEXT_Instruction instruction)
+            throws NonValidAssemblyInstructionException {
         for (Map.Entry<EntryLabelToken, Instruction> entry : entryLabelToInstructionMap.entrySet())
             if (entry.getKey().equals(entryLabel))
-                throw new NonValidAssemblyInstructionException("\n'" + entryLabel + "' was already defined!");
+                throw new NonValidAssemblyInstructionException("\nEntry Label '" + entryLabel + "' was already defined!");
 
         entryLabelToInstructionMap.put(entryLabel, instruction);
     }
@@ -39,6 +44,15 @@ public class InstructionParser {
             throw new WrongFilePathException("\nNon-valid path for a file");
 
         this.formattedCode = new CodeFormatter(filePath).getFormattedCode();
+        this.instructions = new ArrayList<>();
+        this.entryLabelToInstructionMap = new HashMap<>();
+        this.stateFlag = -1;
+
+        precompile();
+    }
+
+    public InstructionParser(String[] instructions) {
+        this.formattedCode = List.of(instructions);
         this.instructions = new ArrayList<>();
         this.entryLabelToInstructionMap = new HashMap<>();
         this.stateFlag = -1;
@@ -129,10 +143,24 @@ public class InstructionParser {
         addEntryLabelToInstructionMap(entryLabelToken, container);
     }
 
-    public static void main(String[] args) throws IOException {
-        String path = "/home/hamudi/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
-        InstructionParser ip = new InstructionParser(path);
-        for (Instruction instruction : ip.instructions)
+    public static void main(String[] args) {
+        String[] instructions = new String[]{
+                ".. text:",
+                "%% entry:",
+                "newline",
+                "nop",
+                "ifetch",
+                "mov"
+        };
+        InstructionParser parser = new InstructionParser(instructions);
+        for (Instruction instruction : parser.instructions)
             System.out.println(instruction);
     }
+
+//    public static void main(String[] args) throws IOException {
+//        String path = "/home/hamnaanaa/Developing/Repositories/H-Language/H-Language/IO/NumberPrinterAssembly.hlan";
+//        InstructionParser ip = new InstructionParser(path);
+//        for (Instruction instruction : ip.instructions)
+//            System.out.println(instruction);
+//    }
 }

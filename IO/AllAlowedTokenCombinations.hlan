@@ -1,11 +1,11 @@
 { Available tokens:
-	- ACCESS_LABEL: 							<var>
+	- ACCESS_LABEL: 							<var> = <var>[0]
 	- ACCESS_LABEL_WITH_INDEX: 	<var>[5]
 	- ARRAY: 										[1, 2, 3, 4, 5]
 	- ENTRY_LABEL: 							%% init:
 	- INTEGER_EXPRESSION:				15
 	- JUMP_LABEL:								%init:
-	- NAME_LITERAL:							var
+	- NAME_LITERAL:							var = var[0]
 	- NAME_LITERAL_WITH_INDEX:	var[5]
 	- OPERATOR:									mov
 	- REGISTRY_ACCESS:					a:5

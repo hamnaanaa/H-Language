@@ -7,6 +7,7 @@ import Assembly.AssemblyExceptions.InstructionParserExceptions.ParserException;
 import Assembly.AssemblyTokens.*;
 import Assembly.InstructionParser;
 
+import javax.swing.text.html.parser.Parser;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -25,7 +26,15 @@ public class TEXT_Instruction extends Instruction {
         this.parser = parser;
 
         this.tokens = parse(tokens);
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (Token token : this.tokens)
+            builder.append(token.getTokenName()).append(" '").append(token).append("' ");
+
+        return builder.toString();
     }
 
     @Override
@@ -63,17 +72,26 @@ public class TEXT_Instruction extends Instruction {
                     throw new UnsupportedOperationException("\nNon-valid instruction found:\n" +
                             "Non-valid function arity: " + tokens.length);
             }
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+        } catch (NoSuchMethodException | IllegalAccessException e) {
             // TODO : change exceptions
-            e.getStackTrace();
+            throw new ParserException(e.getMessage());
+        } catch (InvocationTargetException e) {
+            throw new ParserException(e.getTargetException().getMessage());
         }
 
-        throw new UnsupportedOperationException("\nNon-valid instruction found");
     }
 
     /*                                          BEGIN: ARITY 1 INSTRUCTIONS                                           */
-    // TODO ; javadoc
-    private boolean parse(OperatorToken operatorToken) {
+
+    /**
+     * Method to parse an instruction out of single operator token
+     * Checks if the given token has valid arity
+     *
+     * @param operatorToken operator token to parse
+     * @return true if successful (valid arity)
+     * @throws NonValidAssemblyInstructionException if the given token has arity unequal zero
+     */
+    private boolean parse(OperatorToken operatorToken) throws NonValidAssemblyInstructionException {
         if ((operatorToken.getOP().getArity()) == 0)
             return true;
         else
@@ -82,8 +100,15 @@ public class TEXT_Instruction extends Instruction {
                     + operatorToken + "' has arity " + operatorToken.getOP().getArity());
     }
 
-    // TODO : javadoc
-    private boolean parse(EntryLabelToken entryLabelToken) {
+    /**
+     * Method to parse an instruction out of entry label token
+     * Notifies the parser to check for duplicates and add the label to the map (for address specification later)
+     *
+     * @param entryLabelToken entry label token to parse
+     * @return true if successful (not already specified)
+     * @throws NonValidAssemblyInstructionException if the given entry label was already specified (duplicate)
+     */
+    private boolean parse(EntryLabelToken entryLabelToken) throws NonValidAssemblyInstructionException {
         parser.notify(entryLabelToken, this);
 
         return true;
